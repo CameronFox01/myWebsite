@@ -44,4 +44,6 @@ Go into myWebsite and run the following command " python3 -m http.server 8000 " 
 + Download **Live Server** 
 + Right Click on index.html and select **Open with Live Server**
 + Now open the server on **http://127.0.0.1:5500/index.html** or something similar.
-Note* It Will most likely open on it's own. 
+Note* It Will most likely open on it's own.
+
+(This is a test)
