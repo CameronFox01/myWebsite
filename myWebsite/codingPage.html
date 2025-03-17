@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Coding Projects</title>
+    </head>
+    <body>
+          <!-- Placeholder where the navigation will be inserted -->
+    <div id="nav-placeholder"></div>
+
+    <!-- JavaScript to load the navigation bar -->
+    <script>
+        fetch("navbar.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("nav-placeholder").innerHTML = data;
+            })
+            .catch(error => console.error("Error loading navbar:", error));
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F0F0F0;
+            margin: 0;
+            padding-top: 60px; /* Adjust this to match the height of your navbar */
+            text-align: center;
+        }
+    </style>
+        <h1>
+            Coding Projects
+        </h1>
+    </body>
+</html>
