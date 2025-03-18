@@ -2,12 +2,75 @@
 <html lang="es">
     <head>
         <title>About Page</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #F0F0F0;
+                margin: 0;
+                padding-top: 0; /* Adjust for image & navbar */
+                text-align: center;
+                padding: 0;
+            }
+    
+            .header-container {
+                width: 100%;
+                position: relative;
+                top: 0;
+                left: 0;
+                z-index: 1000;
+                margin: 0;
+            }
+    
+            .header-container img {
+                display: block;
+                width: 100%;
+                height: 315px;
+                object-fit: cover;
+                margin: 0;
+            }
+    
+            .navbar {
+                width: 100%;
+                background-color: #333;
+                padding: 0px 0;
+                text-align: center;
+                position: relative;
+                top: 0;
+                left: 0;
+                z-index: 1001;
+                margin: 0;
+                padding-top: 0;
+            }
+    
+            .navbar a {
+                color: white;
+                text-decoration: none;
+                margin: 0 px;
+                font-size: 18px;
+                font-weight: bold;
+            }
+    
+            .navbar a:hover {
+                text-decoration: underline;
+            }
+        </style>
     </head>
     <body>
-          <!-- Placeholder where the navigation will be inserted -->
+        <div id="header-placeholder"></div>
+
+    <script>
+        fetch("header.html")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("header-placeholder").innerHTML = data;
+
+                // Change the header image dynamically for this page
+                document.getElementById("header-image").src = "images/AboutMe.jpg";
+            })
+            .catch(error => console.error("Error loading header:", error));
+    </script>
     <div id="nav-placeholder"></div>
 
-    <!-- JavaScript to load the navigation bar -->
     <script>
         fetch("navbar.html")
             .then(response => response.text())
@@ -16,15 +79,7 @@
             })
             .catch(error => console.error("Error loading navbar:", error));
     </script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #F0F0F0;
-            margin: 0;
-            padding-top: 60px; /* Adjust this to match the height of your navbar */
-            text-align: center;
-        }
-    </style>
+
         <h1>About Me</h1>
         <p>
             Hello, my name is Cameron Fox. I am a Computer Science student at the University of New Mexico, 
