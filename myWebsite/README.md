@@ -8,6 +8,7 @@ I feel as if this will be very similar to my resumé.
 My goal is to make this website a project that I am proud to show the people in my life who are not coders proud of me. I want the project to be a resource for future job oppertunities. A place for them to get to know more of who I am and be a placed where they are impressed with my skills. 
 
 ## Sections of Code
++ Home Page
 + About Me
 + Work History
 + Coding Projects
@@ -15,6 +16,9 @@ My goal is to make this website a project that I am proud to show the people in 
 + Contact Page
 
 ### Break down of each Section
+#### Home Page 
+The **Home Page** will be what the user see's when they first enter the website. It is also where they will be taken back to after a submition has been made. It will give a break down as to what the website is about and it will explain each sections with a hyper link to connect to each page of the website. 
+
 #### About Me
 The **About Me** page will be focused around who I am. It will cover things such as a short introduction as to who I am. one to two sentences max. It will then cover what got me into **Computer Science** what my areas of intreset will be. 
 
