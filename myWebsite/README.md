@@ -40,6 +40,9 @@ If want to just check one single page and not see everything open the file in go
 ### Mac Options 
 Go into myWebsite and run the following command " python3 -m http.server 8000 " and go to the website http://localhost:8000/index.html
 
+## Want to use the Submition Box's
+Go into myWebsite and run the following command "  php -S localhost:8000 " and go to the website http://localhost:8000/
+
 ### Using VS Code
 + Download **Live Server** 
 + Right Click on index.html and select **Open with Live Server**
