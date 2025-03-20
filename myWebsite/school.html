@@ -4,7 +4,7 @@
         <title>University</title>
         <style>
             body {
-                font-family: Arial, sans-serif;
+                font-family: Georgia, 'Times New Roman', Times, serif;
                 background-color: #F0F0F0;
                 margin: 0;
                 padding-top: 0; /* Adjust for image & navbar */
@@ -53,6 +53,17 @@
             .navbar a:hover {
                 text-decoration: underline;
             }
+
+            .university-container a {
+                color: black; /* Make the link text black */
+                text-decoration: none; /* Remove underline */
+                font-family: Georgia, 'Times New Roman', Times, serif;
+            }
+
+            .university-container a:hover {
+                text-decoration: underline; /* Optional: Show underline on hover */
+                color: red; /* Optional: Change color when hovered */
+            }
         </style>
     </head>
     <body>
@@ -79,10 +90,11 @@
             })
             .catch(error => console.error("Error loading navbar:", error));
     </script>
-
-        <h1>
-            University of New Mexico
-        </h1>
+        <div class="university-container">
+            <h1>
+                <a href="https://www.unm.edu/">University of New Mexico</a>
+            </h1>
+         </div>
         <h2>
             Bachler in Computer Science
         </h2>
