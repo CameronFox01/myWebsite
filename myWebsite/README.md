@@ -23,7 +23,7 @@ The **Home Page** will be what the user see's when they first enter the website.
 The **About Me** page will be focused around who I am. It will cover things such as a short introduction as to who I am. one to two sentences max. It will then cover what got me into **Computer Science** what my areas of intreset will be. 
 
 #### Work History
-This will cover my time at Dion's and all of my volunteering at church.
+This will cover my time at Dion's and all of my volunteering at church. Future updates would include any future work.
 
 #### Coding Projects 
 This will be the projects I have worked on and  that I am proud to talk about if asked about, and projects I am currently working on. 
