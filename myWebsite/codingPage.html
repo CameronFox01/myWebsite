@@ -63,6 +63,10 @@
                 padding-left: 0; /* Remove default left padding */
                 list-style-position: inside; /* Align bullets with text */
             }
+            .bullet_list_language ul ul {
+            margin-left: 20px; /* controls indentation of subpoints */
+            list-style-type: circle; /* makes subpoints different bullets */
+        }
 
             .content-container {
                 max-width: 1000px; /* Set a max width so text isn't too wide */
@@ -179,6 +183,33 @@
             <h2 id="past-projects">Past Projects</h2>
             <p>
                 <ul>
+                    <li><b>UM-Machine - C</b>
+                        This project was an implementation of an emulator for the Universal Machine (UM), 
+                        a simple but powerful virtual machine with only 14 instructions. Despite its minimal 
+                        instruction set, the UM can represent any computation, making it an elegant way to explore 
+                        the foundations of computer architecture and instruction execution.
+
+                        The emulator uses eight general-purpose 32-bit registers, though many operations focus
+                         on registers A, B, and C. To support execution, the emulator also manages segmented memory
+                          and instruction sequencing, simulating how a real processor might allocate, interpret, 
+                          and manipulate data.
+
+                        I chose to implement the emulator in C, since the language is especially well-suited for
+                         low-level tasks such as:
+                         <ul>
+                         <li><b>Instruction decoding</b> — translating the 32-bit binary instructions into their 
+                            corresponding operations.</li>
+                        <li><b>Bit manipulation</b> — efficiently working with binary data to extract opcodes and operands.</li>
+                        <li><b>Memory management</b> — allocating, resizing, and freeing segments of memory to mimic the UM’s model.</li>
+                        </ul>
+                        While C++ or Rust could have been options, I pursued C because it’s the language I’m most 
+                        experienced in and it gave me the most direct control over memory and performance. Building this 
+                        project deepened my understanding of how compilers and interpreters interact with hardware concepts, 
+                        and it pushed me to think carefully about efficiency, correctness, and modular code design.
+
+                        Overall, this project not only gave me a practical way to explore virtual machines but also strengthened 
+                        my skills in low-level programming, systems design, and debugging complex state-based systems.
+                    </li>
                     <li><b>Voting Machine - Java</b> 
                         This is a project I coded for one of my class
                         projects. The premises of the project is to make a voting machine that only does not have 
