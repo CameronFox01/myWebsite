@@ -75,6 +75,11 @@
                 font-size: 20px; /* Make text slightly bigger */
                 line-height: 1.6; /* Improve readability */
             }
+            .working-section li:not(:last-child),
+            .Past-projects-section li:not(:last-child) {
+                margin-bottom: 15px;
+                line-height: 1.6; 
+            }
         </style>
     </head>
     <body>
@@ -174,17 +179,81 @@
             <h2 id="past-projects">Past Projects</h2>
             <p>
                 <ul>
-                    <li><b>Voting Machine</b> This is a project I am currently coding for one of my class
+                    <li><b>Voting Machine - Java</b> 
+                        This is a project I coded for one of my class
                         projects. The premises of the project is to make a voting machine that only does not have 
                         ballets to be entered. But all of the voting will be throught a user interface on the voting machine.
-                        We are tasked with deciding if the voting machine should have physical buttons on the side or 
+                        We were tasked with deciding if the voting machine should have physical buttons on the side or 
                         digital buttons on the display. The main focus of this project is for us to work on several 
-                        different groups with each group working on a specific part and than the groups come together to put 
+                        different part with each group working on a specific part and than the groups come together to put 
                         it all together. So this projet will focus on different groups coming together and having proper 
                         communication to make sure everything comes together without any issues. The main learning objective that I 
-                        personally want to work on is learning proper ways to have security in our code to insure that the votes can not 
+                        personally gained from working on this project is learning proper ways to have security in our code to insure that the votes can not 
                         be alterad to give the election to one of the candiadtes. 
                         </li>
+                    <li><b>Auction House - Java</b> 
+                        This project was developed as part of a class assignment and focused on building a simple marketplace simulation.
+                         The system included three main components: a bank, auction houses, and users. 
+                        The bank managed all account balances, while auction houses could either set or 
+                        auto-generate items for sale. Each user was given a bank account with a starting 
+                        balance and could purchase items as long as they stayed within their budget.
+
+                        The design allowed for one centralized bank but unlimited users and auction houses. A bidding system ensured that users could only place 
+                        bids if they had sufficient funds, adding a layer of financial validation to the process.
+                        
+                        For me, the most valuable part of this project was that it was my first experience coding a system that needed to connect 
+                        across multiple devices. It challenged me to think about communication between different components
+                        and gave me a foundation in building interactive, multi-user systems. 
+                         </li>
+                    <li><b>Galaxy Simulator - Haskell</b>
+                        This project was a simulation of a galaxy, where I coded the movement of planets and stars based on gravitational forces. 
+                        The user could input different parameters, such as the number of celestial bodies, their initial positions, and velocities. 
+                        The simulation would then calculate the gravitational interactions and update the positions of the bodies over time,
+                        allowing the user to visualize the dynamic behavior of a galaxy.
+                         The main learning objective of this project was to understand how to model complex systems and the physics behind celestial movements. 
+                         I also learned how to use Haskell for simulations, which was a new experience for me. 
+                    </li>
+                    <li><b>Calculator - Java</b>
+                        This project is the perfect example of a project that I learned the most from. This project started as a terminal based
+                        calculator that could do basic arithmetic operations that was asigned in class. But I took it a step further and
+                        created a user interface for the calculator. This was my first trime creating a user interface
+                        that wasn't assigned by a class which challenged me to create something that was my own imagination
+                        and had no limits. I learned so much from how to plan properly <i>(I had to restart this project twice and 
+                            honestly it needs one more restart) </i>, how to code a project allows even those without a lot of 
+                            technical knowledge to use it. Every single step of this project was a learning experienceand 
+                            even though this application is truly finished or even a great calculator it is still one of my favorite projects I have ever worked on.
+                    </li>
+                    <li><b>Maze Solver - C</b>
+                        I implemented a maze-solving program in C that explored different pathfinding algorithms, including Breadth-First
+                         Search (BFS), Depth-First Search (DFS), and the A* algorithm. The program was designed not only to find a way
+                          out of the maze but also to optimize traversal when multiple objectives, such as collecting items scattered throughout the maze, were introduced.
+
+                        Each algorithm brought different strengths and challenges. BFS guaranteed the shortest path in terms of steps, but could be memory-intensive 
+                        for larger mazes. DFS offered a simpler approach but sometimes led to inefficient or longer paths. A*, by incorporating heuristics, balanced 
+                        efficiency and accuracy, often producing the most optimized route when navigating toward both the exit and collectible items.
+
+                        Through this project, I gained hands-on experience with algorithm design and complexity analysis, while also deepening my understanding of 
+                        how theoretical concepts like heuristics and search strategies apply to real-world problems. It was an exciting challenge to compare
+                         algorithm performance and see how their behaviors changed depending on the maze size, structure, and item placement.
+                    </li>
+                    <li><b>Resturant POS - Java</b>
+                        I began designing a restaurant point-of-sale (POS) system in Java, modeled after the SpeedLine system. The goal was to replicate core 
+                        functionality such as order entry and menu navigation while building a flexible backend that could support a user-friendly interface.
+
+                        Early in development, I focused heavily on structuring the backend properly. I learned how to create reusable methods that could dynamically generate the buttons
+                        and interface elements needed for different menu items. This approach meant I wouldn’t have to hardcode each button, making the system more scalable and easier to maintain.
+
+                        Once I had successfully built the reusable backend framework, I made the decision to stop development before completing the full interface. Even though the project
+                        wasn’t finished, it was a valuable milestone in my learning process — it taught me the importance of writing clean, modular code and how thoughtful design early 
+                        on can make future development much more efficient.
+                    </li>
+                    <li><b>Tally Counter - Swift</b>
+                        This project was a simple tally counter app developed in Swift for iOS devices. The app allowed users to increment or decrement a counter value 
+                        with the tap of a button. It also included features to reset the counter and save the counter value for future reference. The user interface was designed to be clean and intuitive, 
+                        making it easy for users to quickly access the controls and see the current count. The main learning objective of this project was to get familiar with Swift and iOS app development.
+                        I had always wanted to learn how to create mobile apps, and this project provided a great introduction to the basics of app design and functionality.
+                    </li>
+                    
                 </ul>
             </p>
         </div>
