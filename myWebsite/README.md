@@ -15,6 +15,10 @@ My goal is to make this website a project that I am proud to show the people in 
 + University
 + Contact Page
 
+### Idea for Overall Projects
++ A quote, or Bible verse at the end of each page at the bottom. 
++ Find a design style to continue in the header for all pages to make them match. 
+
 ### Break down of each Section
 #### Home Page 
 The **Home Page** will be what the user see's when they first enter the website. It is also where they will be taken back to after a submition has been made. It will give a break down as to what the website is about and it will explain each sections with a hyper link to connect to each page of the website. 
