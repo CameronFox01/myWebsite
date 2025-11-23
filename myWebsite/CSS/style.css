@@ -49,3 +49,35 @@ body {
 .navbar a:hover {
     text-decoration: underline;
 }
+
+.bullet_list_language {
+    text-align: center; /* Center the list container */
+}
+
+.bullet_list_language ul {
+    display: inline-block; /* Allows proper centering */
+    text-align: left; /* Align text inside the list */
+    padding-left: 0; /* Remove default left padding */
+    list-style-position: inside; /* Align bullets with text */
+}
+    .bullet_list_language ul ul {
+    margin-left: 20px; /* controls indentation of subpoints */
+    list-style-type: circle; /* makes subpoints different bullets */
+    }
+
+.content-container {
+    max-width: 1000px; /* Set a max width so text isn't too wide */
+    margin: 50px auto; /* Center it horizontally */
+    padding: 20px;
+    /*background: white; */ /* Optional: Adds contrast if background is different */
+    border-radius: 10px; /* Optional: Soft rounded edges */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a slight shadow */
+    font-family: "Arial", sans-serif; /* Change font */
+    font-size: 20px; /* Make text slightly bigger */
+    line-height: 1.6; /* Improve readability */
+}
+.working-section li:not(:last-child),
+.Past-projects-section li:not(:last-child) {
+    margin-bottom: 15px;
+    line-height: 1.6; 
+}

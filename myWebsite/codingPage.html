@@ -2,91 +2,10 @@
 <html>
     <head>
         <title>Coding Projects</title>
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                background-color: #F0F0F0;
-                margin: 0;
-                padding-top: 0; /* Adjust for image & navbar */
-                text-align: center;
-                padding: 0;
-            }
-    
-            .header-container {
-                width: 100%;
-                position: relative;
-                top: 0;
-                left: 0;
-                z-index: 1000;
-                margin: 0;
-            }
-    
-            .header-container img {
-                display: block;
-                width: 100%;
-                height: 315px;
-                object-fit: cover;
-                margin: 0;
-            }
-    
-            .navbar {
-                width: 100%;
-                background-color: #333;
-                padding: 0px 0;
-                text-align: center;
-                position: relative;
-                top: 0;
-                left: 0;
-                z-index: 1001;
-                margin: 0;
-                padding-top: 0;
-            }
-    
-            .navbar a {
-                color: white;
-                text-decoration: none;
-                margin: 0 px;
-                font-size: 18px;
-                font-weight: bold;
-            }
-    
-            .navbar a:hover {
-                text-decoration: underline;
-            }
-            .bullet_list_language {
-                text-align: center; /* Center the list container */
-            }
-
-            .bullet_list_language ul {
-                display: inline-block; /* Allows proper centering */
-                text-align: left; /* Align text inside the list */
-                padding-left: 0; /* Remove default left padding */
-                list-style-position: inside; /* Align bullets with text */
-            }
-            .bullet_list_language ul ul {
-            margin-left: 20px; /* controls indentation of subpoints */
-            list-style-type: circle; /* makes subpoints different bullets */
-        }
-
-            .content-container {
-                max-width: 1000px; /* Set a max width so text isn't too wide */
-                margin: 50px auto; /* Center it horizontally */
-                padding: 20px;
-                /*background: white; */ /* Optional: Adds contrast if background is different */
-                border-radius: 10px; /* Optional: Soft rounded edges */
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a slight shadow */
-                font-family: "Arial", sans-serif; /* Change font */
-                font-size: 20px; /* Make text slightly bigger */
-                line-height: 1.6; /* Improve readability */
-            }
-            .working-section li:not(:last-child),
-            .Past-projects-section li:not(:last-child) {
-                margin-bottom: 15px;
-                line-height: 1.6; 
-            }
-        </style>
+        <link rel="stylesheet" href="CSS/style.css">
     </head>
     <body>
+        <div id="nav-placeholder"></div>
         <div id="header-placeholder"></div>
 
         <script>
@@ -100,7 +19,6 @@
                 })
                 .catch(error => console.error("Error loading header:", error));
         </script>
-        <div id="nav-placeholder"></div>
     
         <script>
             fetch("navbar.html")

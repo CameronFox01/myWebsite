@@ -2,72 +2,10 @@
 <html lang="es">
     <head>
         <title>About Page</title>
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                background-color: #F0F0F0;
-                margin: 0;
-                padding-top: 0; /* Adjust for image & navbar */
-                text-align: center;
-                padding: 0;
-            }
-    
-            .header-container {
-                width: 100%;
-                position: relative;
-                top: 0;
-                left: 0;
-                z-index: 1000;
-                margin: 0;
-            }
-    
-            .header-container img {
-                display: block;
-                width: 100%;
-                height: 315px;
-                object-fit: cover;
-                margin: 0;
-            }
-    
-            .navbar {
-                width: 100%;
-                background-color: #333;
-                padding: 0px 0;
-                text-align: center;
-                position: relative;
-                top: 0;
-                left: 0;
-                z-index: 1001;
-                margin: 0;
-                padding-top: 0;
-            }
-    
-            .navbar a {
-                color: white;
-                text-decoration: none;
-                margin: 0 px;
-                font-size: 18px;
-                font-weight: bold;
-            }
-    
-            .navbar a:hover {
-                text-decoration: underline;
-            }
-            .content-container {
-                max-width: 1000px; /* Set a max width so text isn't too wide */
-                margin: 50px auto; /* Center it horizontally */
-                padding: 20px;
-                /*background: white; */ /* Optional: Adds contrast if background is different */
-                border-radius: 10px; /* Optional: Soft rounded edges */
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a slight shadow */
-                font-family: "Arial", sans-serif; /* Change font */
-                font-size: 20px; /* Make text slightly bigger */
-                line-height: 1.6; /* Improve readability */
-            }
-
-        </style>
+        <link rel="stylesheet" href="CSS/style.css">
     </head>
     <body>
+        <div id="nav-placeholder"></div>
         <div id="header-placeholder"></div>
 
     <script>
@@ -81,7 +19,6 @@
             })
             .catch(error => console.error("Error loading header:", error));
     </script>
-    <div id="nav-placeholder"></div>
 
     <script>
         fetch("navbar.html")
