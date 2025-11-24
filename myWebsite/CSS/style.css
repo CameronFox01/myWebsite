@@ -81,3 +81,15 @@ body {
     margin-bottom: 15px;
     line-height: 1.6; 
 }
+.language-icon {
+    width: 40px;
+    height: 40px;
+    vertical-align: middle; /* aligns with text */
+    margin-right: 8px;
+}
+#java-icon {
+    width: 45px;
+    height: 50px;
+    margin-right: 0px;
+    margin-left: 0px;
+}
