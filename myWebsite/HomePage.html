@@ -6,10 +6,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cameron Fox</title>
-    <!-- Favicon -->
-    <link rel="icon" type="image/jpg" href="images/TitleImages/CFIcon.png">
 
-    <link rel="stylesheet" href="CSS/style.css">
+    <script>
+        fetch("GlobalCode/head.html")
+            .then(res => res.text())
+            .then(data => {
+                document.head.insertAdjacentHTML("beforeend", data);
+            });
+    </script>
     
 </head>
 <body>

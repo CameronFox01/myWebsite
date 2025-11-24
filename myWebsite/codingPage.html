@@ -2,7 +2,13 @@
 <html>
     <head>
         <title>Coding Projects</title>
-        <link rel="stylesheet" href="CSS/style.css">
+        <script>
+            fetch("GlobalCode/head.html")
+                .then(res => res.text())
+                .then(data => {
+                    document.head.insertAdjacentHTML("beforeend", data);
+                });
+        </script>
     </head>
     <body>
         <div id="nav-placeholder"></div>

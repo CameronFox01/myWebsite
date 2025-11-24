@@ -2,7 +2,13 @@
 <html>
     <head>
         <title>Work History</title>
-        <link rel="stylesheet" href="CSS/style.css">
+        <script>
+            fetch("GlobalCode/head.html")
+                .then(res => res.text())
+                .then(data => {
+                    document.head.insertAdjacentHTML("beforeend", data);
+                });
+        </script>
     </head>
      <!-- JavaScript to load the navigation bar -->
      <script>

@@ -2,7 +2,13 @@
 <html lang="es">
     <head>
         <title>Contact Me</title>
-        <link rel="stylesheet" href="CSS/style.css">
+        <script>
+            fetch("GlobalCode/head.html")
+                .then(res => res.text())
+                .then(data => {
+                    document.head.insertAdjacentHTML("beforeend", data);
+                });
+        </script>
         <style>
        .contact-me {
         max-width: 920px; /* Set a max width so text isn't too wide */
