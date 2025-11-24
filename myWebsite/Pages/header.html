@@ -1,11 +1,11 @@
 <div class="header-container">
-    <img id="header-image" src="images/default.jpg" alt="Page Header">
+    <img id="header-image" src="../images/default.jpg" alt="Page Header">
     <div id="nav-placeholder"></div>
 </div>
 
 <script>
     // Load Navbar
-    fetch("GlobalCode/navbar.html")
+    fetch("../GlobalCode/navbar.html")
         .then(response => response.text())
         .then(data => {
             document.getElementById("nav-placeholder").innerHTML = data;

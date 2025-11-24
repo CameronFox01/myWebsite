@@ -3,7 +3,7 @@
     <head>
         <title>Contact Me</title>
         <script>
-            fetch("GlobalCode/head.html")
+            fetch("../GlobalCode/head.html")
                 .then(res => res.text())
                 .then(data => {
                     document.head.insertAdjacentHTML("beforeend", data);
@@ -53,7 +53,7 @@
 
     <!-- JavaScript to load the navigation bar -->
     <script>
-        fetch("GlobalCode/navbar.html")
+        fetch("../GlobalCode/navbar.html")
             .then(response => response.text())
             .then(data => {
                 document.getElementById("nav-placeholder").innerHTML = data;

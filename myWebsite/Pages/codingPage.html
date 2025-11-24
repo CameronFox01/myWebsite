@@ -3,7 +3,7 @@
     <head>
         <title>Coding Projects</title>
         <script>
-            fetch("GlobalCode/head.html")
+            fetch("../GlobalCode/head.html")
                 .then(res => res.text())
                 .then(data => {
                     document.head.insertAdjacentHTML("beforeend", data);
@@ -21,14 +21,14 @@
                     document.getElementById("header-placeholder").innerHTML = data;
     
                     // Change the header image dynamically for this page
-                    document.getElementById("header-image").src = "images/TitleImages/AICodeImage.png";
+                    document.getElementById("header-image").src = "../images/TitleImages/AICodeImage.png";
                 })
                 .catch(error => console.error("Error loading header:", error));
 
         </script>
     
         <script>
-            fetch("GlobalCode/navbar.html")
+            fetch("../GlobalCode/navbar.html")
                 .then(response => response.text())
                 .then(data => {
                     document.getElementById("nav-placeholder").innerHTML = data;
