@@ -1,68 +1,70 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Work History</title>
+<section id="work-history">
+    <html>
+        <head>
+            <title>Work History</title>
+            <script>
+                fetch("../GlobalCode/head.html")
+                    .then(res => res.text())
+                    .then(data => {
+                        document.head.insertAdjacentHTML("beforeend", data);
+                    });
+            </script>
+        </head>
+        <!-- JavaScript to load the navigation bar -->
         <script>
-            fetch("../GlobalCode/head.html")
-                .then(res => res.text())
+            fetch("../GlobalCode/navbar.html")
+                .then(response => response.text())
                 .then(data => {
-                    document.head.insertAdjacentHTML("beforeend", data);
-                });
+                    document.getElementById("nav-placeholder").innerHTML = data;
+                })
+                .catch(error => console.error("Error loading navbar:", error));
         </script>
-    </head>
-     <!-- JavaScript to load the navigation bar -->
-     <script>
-        fetch("../GlobalCode/navbar.html")
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById("nav-placeholder").innerHTML = data;
-            })
-            .catch(error => console.error("Error loading navbar:", error));
-    </script>
-    <body>
-          <!-- Placeholder where the navigation will be inserted -->
-    <div id="nav-placeholder"></div>
+        <body>
+            <!-- Placeholder where the navigation will be inserted -->
+        <div id="nav-placeholder"></div>
 
-        <h1>Work History</h1>
+            <h1>Work History</h1>
 
-        <div class="bullet_list_language">
-            <ul>
-                <li>
-                    <b> Orientation Manager at Dion's 10/2023-Present</b>                    
-                    <ul>
-                        <li>As Orientation Manager, I lead the onboarding experience across
-                             all markets, ensuring every new employee starts with a consistent,
-                              welcoming introduction to the company. I design and refine orientation
-                               content, train facilitators, and collaborate closely with HR and
-                                content managers to ensure compliance and clarity. This role has deepened
-                                 my skills in leadership, public speaking, and process development. 
-                                 I also look for opportunities to enhance the program, aligning the onboarding
-                                  journey with company values while making it engaging and meaningful
-                                   for each new hire.</li>
-                    </ul>
-                </li>
-                <li>
-                    <b>Orientation Assistant at Dion's 06/2020-09/2023</b>
-                    <ul>
-                        <li>In this role, I worked directly with new team members, introducing them to Dion’s mission, 
-                            vision, and values. I made sure that employees left orientation with a strong grasp of the 
-                            policies and procedures they would need on the job. I collaborated with the Orientation 
-                            Manager to improve sessions, and I took pride in creating a positive and supportive start 
-                            for thousands of new employees. This experience taught me the value of communication, 
-                            teamwork, and fostering company culture.</li>
-                    </ul>
-                </li>
-                <li>
-                    <b>Trainer at Dion's 01/2017-06/2020</b>
-                    <ul>
-                        <li>As a trainer, I worked one-on-one and in small groups with new employees to teach 
-                            essential food preparation skills and daily operations. I focused not just on technical 
-                            accuracy but also on creating a supportive environment where trainees felt comfortable 
-                            asking questions and growing in confidence. This role gave me my first leadership 
-                            experience and taught me how rewarding it is to help others succeed.</li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </body>
-</html>
+            <div class="bullet_list_language">
+                <ul>
+                    <li>
+                        <b> Orientation Manager at Dion's 10/2023-Present</b>                    
+                        <ul>
+                            <li>As Orientation Manager, I lead the onboarding experience across
+                                all markets, ensuring every new employee starts with a consistent,
+                                welcoming introduction to the company. I design and refine orientation
+                                content, train facilitators, and collaborate closely with HR and
+                                    content managers to ensure compliance and clarity. This role has deepened
+                                    my skills in leadership, public speaking, and process development. 
+                                    I also look for opportunities to enhance the program, aligning the onboarding
+                                    journey with company values while making it engaging and meaningful
+                                    for each new hire.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <b>Orientation Assistant at Dion's 06/2020-09/2023</b>
+                        <ul>
+                            <li>In this role, I worked directly with new team members, introducing them to Dion’s mission, 
+                                vision, and values. I made sure that employees left orientation with a strong grasp of the 
+                                policies and procedures they would need on the job. I collaborated with the Orientation 
+                                Manager to improve sessions, and I took pride in creating a positive and supportive start 
+                                for thousands of new employees. This experience taught me the value of communication, 
+                                teamwork, and fostering company culture.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <b>Trainer at Dion's 01/2017-06/2020</b>
+                        <ul>
+                            <li>As a trainer, I worked one-on-one and in small groups with new employees to teach 
+                                essential food preparation skills and daily operations. I focused not just on technical 
+                                accuracy but also on creating a supportive environment where trainees felt comfortable 
+                                asking questions and growing in confidence. This role gave me my first leadership 
+                                experience and taught me how rewarding it is to help others succeed.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </body>
+    </html>
+</section>

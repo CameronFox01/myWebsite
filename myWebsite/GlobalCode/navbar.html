@@ -1,33 +1,41 @@
-<div class="navbar">
-    <a href="HomePage.html">Home Page</a>
-    <a href="aboutPage.html">About Me</a>
-    <a href="workHistory.html">Work History</a>
-    <a href="school.html">University</a>
-    <a href="codingPage.html">Coding Projects</a>
-    <a href="contactMe.html">Contact Me</a>
-</div>
+<nav class="navbar">
+    <a href="#home">Home</a>
+    <a href="#about">About Me</a>
+    <a href="#university">University</a>
+    <a href="#coding-projects">Projects</a>
+    <a href="#work-history">Work History</a>
+    <a href="#contact-me">Contact Me</a>
+</nav>
 
 <style>
-    .navbar {
-        width: 100%; /* Expand full width */
-        background-color: #333;
-        padding: 15px 0; /* Top & bottom padding */
-        text-align: center;
-        position: relative; 
-        top: 0;
-        left: 0;
-        z-index: 1000; /* Ensures it's above other content */
-        margin: 0;
-    }
-    .navbar a {
-        color: white;
-        text-decoration: none;
-        margin: 0 40px;
-        font-size: 18px;
-        font-weight: bold;
-    }
-    .navbar a:hover {
-        text-decoration: underline;
-    }
-</style>
+/* Navbar container */
+.navbar {
+    width: 100%;
+    background-color: #333;
+    padding: 15px 0;
+    text-align: center;
+    position: sticky;   /* Sticks to top when scrolling */
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
 
+/* Navbar links */
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;  /* Space between links */
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Hover effect */
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+</style>

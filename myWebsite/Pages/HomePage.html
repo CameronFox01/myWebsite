@@ -1,44 +1,11 @@
 <!--This is the structer of the website.-->
 <!--This is the Home Page-->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cameron Fox</title>
 
-    <script>
-        fetch("../GlobalCode/head.html")
-            .then(res => res.text())
-            .then(data => {
-                document.head.insertAdjacentHTML("beforeend", data);
-            });
-    </script>
+<section id="home">
+    <div class="header-container">
+        <img id="header-image" src="./images/TitleImages/homePage.jpg" alt="Header Image">
+    </div>
     
-</head>
-<body>
-    <div id="nav-placeholder"></div>
-    <div id="header-placeholder"></div>
-    <script>
-        fetch("header.html")
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById("header-placeholder").innerHTML = data;
-    
-                // Change the header image dynamically for this page
-                document.getElementById("header-image").src = "../images/TitleImages/homePage.jpg";
-            })
-            .catch(error => console.error("Error loading header:", error));
-    </script>
-
-    <script>
-        fetch("../GlobalCode/navbar.html")
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById("nav-placeholder").innerHTML = data;
-            })
-            .catch(error => console.error("Error loading navbar:", error));
-    </script>
     <h1>Cameron Fox</h1>
     <p>
         Hello, and welcome to my page. This is a page dedicated to Cameron Fox and created by Cameron Fox. 
@@ -46,11 +13,10 @@
         <br />1. To help me learn <b>HTML, CSS</b>, and <b>JavaScript</b>  
         <br />2. To serve as a website for all of my professional and coding documents to help me grow in my Software Engineering career.
     </p>
-
+    
     <p>
         <q>Rest at the end, not in the middle</q> <abbr title="Mister">Mr.</abbr> Fisk
     </p>
-</body>
-</html>
+</section>
 
 

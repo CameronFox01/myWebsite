@@ -1,53 +1,55 @@
 <!DOCTYPE html>
-<html lang="es">
-    <head>
-        <title>University</title>
+<section id="university">
+    <html lang="es">
+        <head>
+            <title>University</title>
+            <script>
+                fetch("../GlobalCode/head.html")
+                    .then(res => res.text())
+                    .then(data => {
+                        document.head.insertAdjacentHTML("beforeend", data);
+                    });
+            </script>
+        </head>
+        <body>
+            <div id="nav-placeholder"></div>
+            <div id="header-placeholder"></div>
+
         <script>
-            fetch("../GlobalCode/head.html")
-                .then(res => res.text())
+            fetch("header.html")
+                .then(response => response.text())
                 .then(data => {
-                    document.head.insertAdjacentHTML("beforeend", data);
-                });
+                    document.getElementById("header-placeholder").innerHTML = data;
+
+                    // Change the header image dynamically for this page
+                    // TODO: Change the image to be something cleaner. 
+                    document.getElementById("header-image").src = "../images/TitleImages/university.jpg";   
+                })
+                .catch(error => console.error("Error loading header:", error));
         </script>
-    </head>
-    <body>
-        <div id="nav-placeholder"></div>
-        <div id="header-placeholder"></div>
 
-    <script>
-        fetch("header.html")
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById("header-placeholder").innerHTML = data;
-
-                // Change the header image dynamically for this page
-                // TODO: Change the image to be something cleaner. 
-                document.getElementById("header-image").src = "../images/TitleImages/university.jpg";   
-            })
-            .catch(error => console.error("Error loading header:", error));
-    </script>
-
-    <script>
-        fetch("../GlobalCode/navbar.html")
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById("nav-placeholder").innerHTML = data;
-            })
-            .catch(error => console.error("Error loading navbar:", error));
-    </script>
-        <div class="university-container">
-            <h1>
-                <a href="https://www.unm.edu/">University of New Mexico</a>
-            </h1>
-         </div>
-        <h2>
-            Bachelor's in Computer Science
-        </h2>
-        <h3>
-            Minor in Communication
-        </h3>
-        <h3>
-            Graduation Anticipation May 2026
-        </h3>
-    </body>
-</html>
+        <script>
+            fetch("../GlobalCode/navbar.html")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("nav-placeholder").innerHTML = data;
+                })
+                .catch(error => console.error("Error loading navbar:", error));
+        </script>
+            <div class="university-container">
+                <h1>
+                    <a href="https://www.unm.edu/">University of New Mexico</a>
+                </h1>
+            </div>
+            <h2>
+                Bachelor's in Computer Science
+            </h2>
+            <h3>
+                Minor in Communication
+            </h3>
+            <h3>
+                Graduation Anticipation May 2026
+            </h3>
+        </body>
+    </html>
+</section>

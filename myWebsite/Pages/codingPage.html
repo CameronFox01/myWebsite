@@ -1,261 +1,263 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Coding Projects</title>
-        <script>
-            fetch("../GlobalCode/head.html")
-                .then(res => res.text())
-                .then(data => {
-                    document.head.insertAdjacentHTML("beforeend", data);
-                });
-        </script>
-    </head>
-    <body>
-        <div id="nav-placeholder"></div>
-        <div id="header-placeholder"></div>
+<section id="coding-projects">
+    <html>
+        <head>
+            <title>Coding Projects</title>
+            <script>
+                fetch("../GlobalCode/head.html")
+                    .then(res => res.text())
+                    .then(data => {
+                        document.head.insertAdjacentHTML("beforeend", data);
+                    });
+            </script>
+        </head>
+        <body>
+            <div id="nav-placeholder"></div>
+            <div id="header-placeholder"></div>
 
-        <script>
-            fetch("header.html")
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById("header-placeholder").innerHTML = data;
-    
-                    // Change the header image dynamically for this page
-                    document.getElementById("header-image").src = "../images/TitleImages/AICodeImage.png";
-                })
-                .catch(error => console.error("Error loading header:", error));
+            <script>
+                fetch("header.html")
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById("header-placeholder").innerHTML = data;
+        
+                        // Change the header image dynamically for this page
+                        document.getElementById("header-image").src = "../images/TitleImages/AICodeImage.png";
+                    })
+                    .catch(error => console.error("Error loading header:", error));
 
-        </script>
-    
-        <script>
-            fetch("../GlobalCode/navbar.html")
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById("nav-placeholder").innerHTML = data;
-                })
-                .catch(error => console.error("Error loading navbar:", error));
-        </script>
+            </script>
+        
+            <script>
+                fetch("../GlobalCode/navbar.html")
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById("nav-placeholder").innerHTML = data;
+                    })
+                    .catch(error => console.error("Error loading navbar:", error));
+            </script>
 
-        <div class="content-container">
-        <h1>
-            Coding Projects
-        </h1>
-            <p>
-                Welcome to the section that is all about programming! When it comes to the projects that 
-                I enjoy to make and find myself drawn to create have to due with projects that can be used 
-                by anyone—regardless of their background. Which typically means I like to get some sort of 
-                front end created for a user to use. I enjoy seeing how things can come together and challeneging 
-                myself to create something new and different than anything I have never programmed. I have learned 
-                that I learn bess by doing, in which I can learn new and more efficient ways of solving a solution or 
-                figuring out how to arrive to a solution the very first time. 
-                In this section I have the following sections. <a href="#languages"><b>Known Languages</b> </a>, 
-                <a href="#working-projects"><b>Currently Working on Projects</b></a>, <a href="#past-projects"><b>Past Projects</b></a>,
-                and <a href="#coding-ideas"><b>Coding Ideas?</b></a>.
-            </p>
-            <div class="languages-section">
-                <h2 id="languages">Known Languages</h2>
-                <p>These are the list of languages that I feel confident in and will be willing to code any project in
-                    <div class="bullet_list_language">
-                        <ul>
-                            <li><img src="images/icons/javaIcon.png" alt="Java icon" id="java-icon" class="language-icon"> Java</li>
-                            <li><img src="images/icons/C_Programming_Language_Icon.png" alt="C icon" class="language-icon">C</li>
-                            <li><img src="images/icons/C++Icon.svg" alt="C++ icon" class="language-icon">C++</li>
-                            <li><img src="images/icons/swiftIcon.png" alt="Swift icon" class="language-icon">Swift</li>
-                            <li><img src="images/icons/pythonIcon.png" alt="Python icon" class="language-icon">Python</li>
-                            <li><img src="images/icons/MatlabIcon.png" alt="MatLab Icon" class="language-icon">MATLAB</li>
-                        </ul>
-                    </div>
-
-                    I am currently growing my skills in web development with a focus in the following languages.
-                    <div class="bullet_list_language">
-                        <ul>
-                            <li><img src="images/icons/HTMLIcon.png" alt="HTML icon" class="language-icon">HTML</li>
-                            <li><img src="images/icons/CSSIcon.png" alt="CSS icon" class="language-icon">CSS</li>
-                            <li><img src="images/icons/JavaScriptIcon.png" alt="JavaScript icon" class="language-icon">JavaScript</li>
-                        </ul>
-                    </div>
-                </p>
-            </div>
-
-            <div class="working-section">
-                <h2 id="working-projects">Currently Working on Projects</h2>
+            <div class="content-container">
+            <h1>
+                Coding Projects
+            </h1>
                 <p>
-                    The projects I am currently working on and the languages they are being written in are as follows.
+                    Welcome to the section that is all about programming! When it comes to the projects that 
+                    I enjoy to make and find myself drawn to create have to due with projects that can be used 
+                    by anyone—regardless of their background. Which typically means I like to get some sort of 
+                    front end created for a user to use. I enjoy seeing how things can come together and challeneging 
+                    myself to create something new and different than anything I have never programmed. I have learned 
+                    that I learn bess by doing, in which I can learn new and more efficient ways of solving a solution or 
+                    figuring out how to arrive to a solution the very first time. 
+                    In this section I have the following sections. <a href="#languages"><b>Known Languages</b> </a>, 
+                    <a href="#working-projects"><b>Currently Working on Projects</b></a>, <a href="#past-projects"><b>Past Projects</b></a>,
+                    and <a href="#coding-ideas"><b>Coding Ideas?</b></a>.
+                </p>
+                <div class="languages-section">
+                    <h2 id="languages">Known Languages</h2>
+                    <p>These are the list of languages that I feel confident in and will be willing to code any project in
+                        <div class="bullet_list_language">
+                            <ul>
+                                <li><img src="images/icons/javaIcon.png" alt="Java icon" id="java-icon" class="language-icon"> Java</li>
+                                <li><img src="images/icons/C_Programming_Language_Icon.png" alt="C icon" class="language-icon">C</li>
+                                <li><img src="images/icons/C++Icon.svg" alt="C++ icon" class="language-icon">C++</li>
+                                <li><img src="images/icons/swiftIcon.png" alt="Swift icon" class="language-icon">Swift</li>
+                                <li><img src="images/icons/pythonIcon.png" alt="Python icon" class="language-icon">Python</li>
+                                <li><img src="images/icons/MatlabIcon.png" alt="MatLab Icon" class="language-icon">MATLAB</li>
+                            </ul>
+                        </div>
+
+                        I am currently growing my skills in web development with a focus in the following languages.
+                        <div class="bullet_list_language">
+                            <ul>
+                                <li><img src="images/icons/HTMLIcon.png" alt="HTML icon" class="language-icon">HTML</li>
+                                <li><img src="images/icons/CSSIcon.png" alt="CSS icon" class="language-icon">CSS</li>
+                                <li><img src="images/icons/JavaScriptIcon.png" alt="JavaScript icon" class="language-icon">JavaScript</li>
+                            </ul>
+                        </div>
+                    </p>
+                </div>
+
+                <div class="working-section">
+                    <h2 id="working-projects">Currently Working on Projects</h2>
+                    <p>
+                        The projects I am currently working on and the languages they are being written in are as follows.
+                        <ul>
+                            <li><b>Pit Bull Rescue Website</b> This is a project I am working on for a pit bull rescue.
+                            The goal of this project is to create a website that will help the rescue get more visibility
+                            and help them find more homes for the dogs they rescue. The website will have a section for
+                            the dogs that are available for adoption, a section for donations, and a section for volunteers.
+                            The main learning objective of this project is to learn more about web development and how to
+                            create a website that is both functional and visually appealing. This website is being coded in
+                            <b>HTML, CSS,</b> and <b>JavaScript</b>. This is my first time creating a website for a real client,
+                            so I am excited to test myself in every aspect of web development to make the very best product
+                            that I can possible provide for them.                         
+                            </li>
+
+                            <li><b>WorkOut Application</b> This will be an iOS app developed in <b>Swift</b>. The main focus of
+                            this app will be centered around the tracking of someones personal fitness growth. It will 
+                            keep track of how many times someone enteres the gym, what weights they did for a certain excercise 
+                            and how many reps at that weight. It will also have an option for you upload photos of yourself
+                            and be able to compare the photos with previous ones to track your physical appreance over time. 
+                            With the main learning objectives of this project for me to learn how to use data systems in Swift 
+                            and not just an application that doesn't get affected by the previous usages. 
+                            </li>
+
+                            <li><b>Wrist Monitor</b> This is a personal project I’m currently developing. 
+                                The goal is to repurpose an old Apple Watch as a miniature display for my Windows PC, 
+                                showing key system information. Specifically, I want to display real-time CPU, GPU, and RAM usage.
+
+                                The main learning objective of this project is to understand how to communicate 
+                                effectively between different devices and how to present information clearly on a small screen.
+                                I am coding this project in <b>Python</b> and <b>Swift</b>.
+                                
+                                This is my first time working on a project that spans multiple languages, and it was something 
+                                I was curious to explore before starting. So far, it has been a fun learning experience, and 
+                                it’s been easier than I expected to get the two languages to work together seamlessly.
+                            </li>
+
+                            <li><b>Compiler</b> This is a project being made for one of my classes. The goal of this project is to create a compiler that 
+                                will take in a file with code written in a made up language called <i>while</i> and than compile it into assembly code. 
+                                The main learning objective of this project is to understand how compilers work and the different stages of a compiler. 
+                                This project is being coded in <b>Python</b>. The language <i>while</i> is a simple language that has basic programming
+                                constructs such as variables, loops, and conditionals. 
+
+                            </li>
+                        </ul>
+                    </p>
+                </div>
+            <div class="Past-projects-section">
+                <h2 id="past-projects">Past Projects</h2>
+                <p>
+                    The projects I have worked on in the past and the languages they were written in are as follows.
                     <ul>
-                        <li><b>Pit Bull Rescue Website</b> This is a project I am working on for a pit bull rescue.
-                        The goal of this project is to create a website that will help the rescue get more visibility
-                        and help them find more homes for the dogs they rescue. The website will have a section for
-                        the dogs that are available for adoption, a section for donations, and a section for volunteers.
-                        The main learning objective of this project is to learn more about web development and how to
-                        create a website that is both functional and visually appealing. This website is being coded in
-                        <b>HTML, CSS,</b> and <b>JavaScript</b>. This is my first time creating a website for a real client,
-                        so I am excited to test myself in every aspect of web development to make the very best product
-                        that I can possible provide for them.                         
+                        <li><b>UM-Machine - C</b>
+                            This project was an implementation of an emulator for the Universal Machine (UM), 
+                            a simple but powerful virtual machine with only 14 instructions. Despite its minimal 
+                            instruction set, the UM can represent any computation, making it an elegant way to explore 
+                            the foundations of computer architecture and instruction execution.
+
+                            The emulator uses eight general-purpose 32-bit registers, though many operations focus
+                            on registers A, B, and C. To support execution, the emulator also manages segmented memory
+                            and instruction sequencing, simulating how a real processor might allocate, interpret, 
+                            and manipulate data.
+
+                            I chose to implement the emulator in C, since the language is especially well-suited for
+                            low-level tasks such as:
+                            <ul>
+                            <li><b>Instruction decoding</b> — translating the 32-bit binary instructions into their 
+                                corresponding operations.</li>
+                            <li><b>Bit manipulation</b> — efficiently working with binary data to extract opcodes and operands.</li>
+                            <li><b>Memory management</b> — allocating, resizing, and freeing segments of memory to mimic the UM’s model.</li>
+                            </ul>
+                            While C++ or Rust could have been options, I pursued C because it’s the language I’m most 
+                            experienced in and it gave me the most direct control over memory and performance. Building this 
+                            project deepened my understanding of how compilers and interpreters interact with hardware concepts, 
+                            and it pushed me to think carefully about efficiency, correctness, and modular code design.
+
+                            Overall, this project not only gave me a practical way to explore virtual machines but also strengthened 
+                            my skills in low-level programming, systems design, and debugging complex state-based systems.
                         </li>
+                        <li><b>Voting Machine - Java</b> 
+                            This is a project I coded for one of my class
+                            projects. The premises of the project is to make a voting machine that only does not have 
+                            ballets to be entered. But all of the voting will be throught a user interface on the voting machine.
+                            We were tasked with deciding if the voting machine should have physical buttons on the side or 
+                            digital buttons on the display. The main focus of this project is for us to work on several 
+                            different part with each group working on a specific part and than the groups come together to put 
+                            it all together. So this projet will focus on different groups coming together and having proper 
+                            communication to make sure everything comes together without any issues. The main learning objective that I 
+                            personally gained from working on this project is learning proper ways to have security in our code to insure that the votes can not 
+                            be alterad to give the election to one of the candiadtes. 
+                            </li>
+                        <li><b>Auction House - Java</b> 
+                            This project was developed as part of a class assignment and focused on building a simple marketplace simulation.
+                            The system included three main components: a bank, auction houses, and users. 
+                            The bank managed all account balances, while auction houses could either set or 
+                            auto-generate items for sale. Each user was given a bank account with a starting 
+                            balance and could purchase items as long as they stayed within their budget.
 
-                        <li><b>WorkOut Application</b> This will be an iOS app developed in <b>Swift</b>. The main focus of
-                        this app will be centered around the tracking of someones personal fitness growth. It will 
-                        keep track of how many times someone enteres the gym, what weights they did for a certain excercise 
-                        and how many reps at that weight. It will also have an option for you upload photos of yourself
-                        and be able to compare the photos with previous ones to track your physical appreance over time. 
-                        With the main learning objectives of this project for me to learn how to use data systems in Swift 
-                        and not just an application that doesn't get affected by the previous usages. 
-                        </li>
-
-                        <li><b>Wrist Monitor</b> This is a personal project I’m currently developing. 
-                            The goal is to repurpose an old Apple Watch as a miniature display for my Windows PC, 
-                            showing key system information. Specifically, I want to display real-time CPU, GPU, and RAM usage.
-
-                            The main learning objective of this project is to understand how to communicate 
-                            effectively between different devices and how to present information clearly on a small screen.
-                             I am coding this project in <b>Python</b> and <b>Swift</b>.
+                            The design allowed for one centralized bank but unlimited users and auction houses. A bidding system ensured that users could only place 
+                            bids if they had sufficient funds, adding a layer of financial validation to the process.
                             
-                            This is my first time working on a project that spans multiple languages, and it was something 
-                            I was curious to explore before starting. So far, it has been a fun learning experience, and 
-                            it’s been easier than I expected to get the two languages to work together seamlessly.
+                            For me, the most valuable part of this project was that it was my first experience coding a system that needed to connect 
+                            across multiple devices. It challenged me to think about communication between different components
+                            and gave me a foundation in building interactive, multi-user systems. 
+                            </li>
+                        <li><b>Galaxy Simulator - Haskell</b>
+                            This project was a simulation of a galaxy, where I coded the movement of planets and stars based on gravitational forces. 
+                            The user could input different parameters, such as the number of celestial bodies, their initial positions, and velocities. 
+                            The simulation would then calculate the gravitational interactions and update the positions of the bodies over time,
+                            allowing the user to visualize the dynamic behavior of a galaxy.
+                            The main learning objective of this project was to understand how to model complex systems and the physics behind celestial movements. 
+                            I also learned how to use Haskell for simulations, which was a new experience for me. 
                         </li>
-
-                        <li><b>Compiler</b> This is a project being made for one of my classes. The goal of this project is to create a compiler that 
-                            will take in a file with code written in a made up language called <i>while</i> and than compile it into assembly code. 
-                            The main learning objective of this project is to understand how compilers work and the different stages of a compiler. 
-                            This project is being coded in <b>Python</b>. The language <i>while</i> is a simple language that has basic programming
-                            constructs such as variables, loops, and conditionals. 
-
+                        <li><b>Calculator - Java</b>
+                            This project is the perfect example of a project that I learned the most from. This project started as a terminal based
+                            calculator that could do basic arithmetic operations that was asigned in class. But I took it a step further and
+                            created a user interface for the calculator. This was my first trime creating a user interface
+                            that wasn't assigned by a class which challenged me to create something that was my own imagination
+                            and had no limits. I learned so much from how to plan properly <i>(I had to restart this project twice and 
+                                honestly it needs one more restart) </i>, how to code a project allows even those without a lot of 
+                                technical knowledge to use it. Every single step of this project was a learning experienceand 
+                                even though this application is truly finished or even a great calculator it is still one of my favorite projects I have ever worked on.
                         </li>
+                        <li><b>Maze Solver - C</b>
+                            I implemented a maze-solving program in C that explored different pathfinding algorithms, including Breadth-First
+                            Search (BFS), Depth-First Search (DFS), and the A* algorithm. The program was designed not only to find a way
+                            out of the maze but also to optimize traversal when multiple objectives, such as collecting items scattered throughout the maze, were introduced.
+
+                            Each algorithm brought different strengths and challenges. BFS guaranteed the shortest path in terms of steps, but could be memory-intensive 
+                            for larger mazes. DFS offered a simpler approach but sometimes led to inefficient or longer paths. A*, by incorporating heuristics, balanced 
+                            efficiency and accuracy, often producing the most optimized route when navigating toward both the exit and collectible items.
+
+                            Through this project, I gained hands-on experience with algorithm design and complexity analysis, while also deepening my understanding of 
+                            how theoretical concepts like heuristics and search strategies apply to real-world problems. It was an exciting challenge to compare
+                            algorithm performance and see how their behaviors changed depending on the maze size, structure, and item placement.
+                        </li>
+                        <li><b>Resturant POS - Java</b>
+                            I began designing a restaurant point-of-sale (POS) system in Java, modeled after the SpeedLine system. The goal was to replicate core 
+                            functionality such as order entry and menu navigation while building a flexible backend that could support a user-friendly interface.
+
+                            Early in development, I focused heavily on structuring the backend properly. I learned how to create reusable methods that could dynamically generate the buttons
+                            and interface elements needed for different menu items. This approach meant I wouldn’t have to hardcode each button, making the system more scalable and easier to maintain.
+
+                            Once I had successfully built the reusable backend framework, I made the decision to stop development before completing the full interface. Even though the project
+                            wasn’t finished, it was a valuable milestone in my learning process — it taught me the importance of writing clean, modular code and how thoughtful design early 
+                            on can make future development much more efficient.
+                        </li>
+                        <li><b>Tally Counter - Swift</b>
+                            This project was a simple tally counter app developed in Swift for iOS devices. The app allowed users to increment or decrement a counter value 
+                            with the tap of a button. It also included features to reset the counter and save the counter value for future reference. The user interface was designed to be clean and intuitive, 
+                            making it easy for users to quickly access the controls and see the current count. The main learning objective of this project was to get familiar with Swift and iOS app development.
+                            I had always wanted to learn how to create mobile apps, and this project provided a great introduction to the basics of app design and functionality.
+                        </li>
+                        
                     </ul>
                 </p>
             </div>
-        <div class="Past-projects-section">
-            <h2 id="past-projects">Past Projects</h2>
+            
+            <div class="idea-section">
+            <h2 id="coding-ideas">Coding Ideas?</h2>
             <p>
-                The projects I have worked on in the past and the languages they were written in are as follows.
-                <ul>
-                    <li><b>UM-Machine - C</b>
-                        This project was an implementation of an emulator for the Universal Machine (UM), 
-                        a simple but powerful virtual machine with only 14 instructions. Despite its minimal 
-                        instruction set, the UM can represent any computation, making it an elegant way to explore 
-                        the foundations of computer architecture and instruction execution.
-
-                        The emulator uses eight general-purpose 32-bit registers, though many operations focus
-                         on registers A, B, and C. To support execution, the emulator also manages segmented memory
-                          and instruction sequencing, simulating how a real processor might allocate, interpret, 
-                          and manipulate data.
-
-                        I chose to implement the emulator in C, since the language is especially well-suited for
-                         low-level tasks such as:
-                         <ul>
-                         <li><b>Instruction decoding</b> — translating the 32-bit binary instructions into their 
-                            corresponding operations.</li>
-                        <li><b>Bit manipulation</b> — efficiently working with binary data to extract opcodes and operands.</li>
-                        <li><b>Memory management</b> — allocating, resizing, and freeing segments of memory to mimic the UM’s model.</li>
-                        </ul>
-                        While C++ or Rust could have been options, I pursued C because it’s the language I’m most 
-                        experienced in and it gave me the most direct control over memory and performance. Building this 
-                        project deepened my understanding of how compilers and interpreters interact with hardware concepts, 
-                        and it pushed me to think carefully about efficiency, correctness, and modular code design.
-
-                        Overall, this project not only gave me a practical way to explore virtual machines but also strengthened 
-                        my skills in low-level programming, systems design, and debugging complex state-based systems.
-                    </li>
-                    <li><b>Voting Machine - Java</b> 
-                        This is a project I coded for one of my class
-                        projects. The premises of the project is to make a voting machine that only does not have 
-                        ballets to be entered. But all of the voting will be throught a user interface on the voting machine.
-                        We were tasked with deciding if the voting machine should have physical buttons on the side or 
-                        digital buttons on the display. The main focus of this project is for us to work on several 
-                        different part with each group working on a specific part and than the groups come together to put 
-                        it all together. So this projet will focus on different groups coming together and having proper 
-                        communication to make sure everything comes together without any issues. The main learning objective that I 
-                        personally gained from working on this project is learning proper ways to have security in our code to insure that the votes can not 
-                        be alterad to give the election to one of the candiadtes. 
-                        </li>
-                    <li><b>Auction House - Java</b> 
-                        This project was developed as part of a class assignment and focused on building a simple marketplace simulation.
-                         The system included three main components: a bank, auction houses, and users. 
-                        The bank managed all account balances, while auction houses could either set or 
-                        auto-generate items for sale. Each user was given a bank account with a starting 
-                        balance and could purchase items as long as they stayed within their budget.
-
-                        The design allowed for one centralized bank but unlimited users and auction houses. A bidding system ensured that users could only place 
-                        bids if they had sufficient funds, adding a layer of financial validation to the process.
-                        
-                        For me, the most valuable part of this project was that it was my first experience coding a system that needed to connect 
-                        across multiple devices. It challenged me to think about communication between different components
-                        and gave me a foundation in building interactive, multi-user systems. 
-                         </li>
-                    <li><b>Galaxy Simulator - Haskell</b>
-                        This project was a simulation of a galaxy, where I coded the movement of planets and stars based on gravitational forces. 
-                        The user could input different parameters, such as the number of celestial bodies, their initial positions, and velocities. 
-                        The simulation would then calculate the gravitational interactions and update the positions of the bodies over time,
-                        allowing the user to visualize the dynamic behavior of a galaxy.
-                         The main learning objective of this project was to understand how to model complex systems and the physics behind celestial movements. 
-                         I also learned how to use Haskell for simulations, which was a new experience for me. 
-                    </li>
-                    <li><b>Calculator - Java</b>
-                        This project is the perfect example of a project that I learned the most from. This project started as a terminal based
-                        calculator that could do basic arithmetic operations that was asigned in class. But I took it a step further and
-                        created a user interface for the calculator. This was my first trime creating a user interface
-                        that wasn't assigned by a class which challenged me to create something that was my own imagination
-                        and had no limits. I learned so much from how to plan properly <i>(I had to restart this project twice and 
-                            honestly it needs one more restart) </i>, how to code a project allows even those without a lot of 
-                            technical knowledge to use it. Every single step of this project was a learning experienceand 
-                            even though this application is truly finished or even a great calculator it is still one of my favorite projects I have ever worked on.
-                    </li>
-                    <li><b>Maze Solver - C</b>
-                        I implemented a maze-solving program in C that explored different pathfinding algorithms, including Breadth-First
-                         Search (BFS), Depth-First Search (DFS), and the A* algorithm. The program was designed not only to find a way
-                          out of the maze but also to optimize traversal when multiple objectives, such as collecting items scattered throughout the maze, were introduced.
-
-                        Each algorithm brought different strengths and challenges. BFS guaranteed the shortest path in terms of steps, but could be memory-intensive 
-                        for larger mazes. DFS offered a simpler approach but sometimes led to inefficient or longer paths. A*, by incorporating heuristics, balanced 
-                        efficiency and accuracy, often producing the most optimized route when navigating toward both the exit and collectible items.
-
-                        Through this project, I gained hands-on experience with algorithm design and complexity analysis, while also deepening my understanding of 
-                        how theoretical concepts like heuristics and search strategies apply to real-world problems. It was an exciting challenge to compare
-                         algorithm performance and see how their behaviors changed depending on the maze size, structure, and item placement.
-                    </li>
-                    <li><b>Resturant POS - Java</b>
-                        I began designing a restaurant point-of-sale (POS) system in Java, modeled after the SpeedLine system. The goal was to replicate core 
-                        functionality such as order entry and menu navigation while building a flexible backend that could support a user-friendly interface.
-
-                        Early in development, I focused heavily on structuring the backend properly. I learned how to create reusable methods that could dynamically generate the buttons
-                        and interface elements needed for different menu items. This approach meant I wouldn’t have to hardcode each button, making the system more scalable and easier to maintain.
-
-                        Once I had successfully built the reusable backend framework, I made the decision to stop development before completing the full interface. Even though the project
-                        wasn’t finished, it was a valuable milestone in my learning process — it taught me the importance of writing clean, modular code and how thoughtful design early 
-                        on can make future development much more efficient.
-                    </li>
-                    <li><b>Tally Counter - Swift</b>
-                        This project was a simple tally counter app developed in Swift for iOS devices. The app allowed users to increment or decrement a counter value 
-                        with the tap of a button. It also included features to reset the counter and save the counter value for future reference. The user interface was designed to be clean and intuitive, 
-                        making it easy for users to quickly access the controls and see the current count. The main learning objective of this project was to get familiar with Swift and iOS app development.
-                        I had always wanted to learn how to create mobile apps, and this project provided a great introduction to the basics of app design and functionality.
-                    </li>
-                    
-                </ul>
+                Do you have a project idea you'd like to see brought to life? Share it with me below! 
+                Feel free to provide as much or as little detail as you wish. If your idea is selected,
+                I'll develop it and prominently credit you for your contribution.
             </p>
+            <form action="save_data.php" method="POST">
+                <fieldset>
+                    <legend>Project Submission</legend>
+                    <label>Email: <br />
+                        <input type="text" name="email" />
+                    </label><br />
+                    <label>Project Idea: <br />
+                        <textarea name="comments" cols="20" rows="4"></textarea>
+                    </label><br />
+                    <input type="submit" value="Submit"/>
+                </fieldset>
+            </form>
         </div>
-        
-        <div class="idea-section">
-        <h2 id="coding-ideas">Coding Ideas?</h2>
-        <p>
-            Do you have a project idea you'd like to see brought to life? Share it with me below! 
-            Feel free to provide as much or as little detail as you wish. If your idea is selected,
-             I'll develop it and prominently credit you for your contribution.
-        </p>
-        <form action="save_data.php" method="POST">
-            <fieldset>
-                <legend>Project Submission</legend>
-                <label>Email: <br />
-                    <input type="text" name="email" />
-                </label><br />
-                <label>Project Idea: <br />
-                    <textarea name="comments" cols="20" rows="4"></textarea>
-                </label><br />
-                <input type="submit" value="Submit"/>
-            </fieldset>
-        </form>
-    </div>
-    </div>
-    </body>
-</html>
+        </div>
+        </body>
+    </html>
+</section>
