@@ -120,3 +120,66 @@ body {
         max-width: 80%;
     }
 }
+/* Form styling */
+.fieldset-style {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    border: 2px solid #666;
+    border-radius: 10px;
+}
+
+.fieldset-style legend {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+.fieldset-style label {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 18px;
+    text-align: left;
+}
+
+.fieldset-style input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #666;
+    border-radius: 5px;
+    background-color: #2a2a2a;
+    color: white;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+.fieldset-style textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #666;
+    border-radius: 5px;
+    background-color: #2a2a2a;
+    color: white;
+    margin-top: 5px;
+    min-height: 150px; /* Makes textarea taller */
+    resize: vertical; /* Allows user to resize vertically */
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.fieldset-style input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.fieldset-style input[type="submit"]:hover {
+    background-color: #45a049;
+}
