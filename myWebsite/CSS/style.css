@@ -93,3 +93,30 @@ body {
     margin-right: 0px;
     margin-left: 0px;
 }
+
+/* About section image styling */
+.about-image {
+    float: right;
+    width: 300px;
+    max-width: 40%;
+    margin: 0 0 20px 30px; /* top right bottom left */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+}
+
+/* Ensure content clears the float after */
+.content-container::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive: stack image on top for mobile */
+@media (max-width: 768px) {
+    .about-image {
+        float: none;
+        display: block;
+        margin: 0 auto 20px auto;
+        max-width: 80%;
+    }
+}

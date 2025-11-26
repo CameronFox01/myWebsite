@@ -1,71 +1,35 @@
-<!DOCTYPE html>
+
 <section id="about">
-    <html lang="es">
-        <head>
-            <title>About Page</title>
-            <script>
-                fetch("../GlobalCode/head.html")
-                    .then(res => res.text())
-                    .then(data => {
-                        document.head.insertAdjacentHTML("beforeend", data);
-                    });
-            </script>
-        </head>
-        <body>
-            <div id="nav-placeholder"></div>
-            <div id="header-placeholder"></div>
-
-        <script>
-            fetch("header.html")
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById("header-placeholder").innerHTML = data;
-
-                    // Change the header image dynamically for this page
-                    document.getElementById("header-image").src = "../images/TitleImages/AboutMe.jpg";
-                })
-                .catch(error => console.error("Error loading header:", error));
-        </script>
-
-        <script>
-            fetch("../GlobalCode/navbar.html")
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById("nav-placeholder").innerHTML = data;
-                })
-                .catch(error => console.error("Error loading navbar:", error));
-        </script>
-        <div class="content-container">
-                <h1>About Me</h1>
-                <p>
-                    Hello, my name is Cameron Fox. I am a Computer Science student at the University of New Mexico, 
-                    born and raised in Albuquerque, New Mexico. My passion for computer science has been with me for 
-                    as long as I can remember. However, I didn't start coding until after graduating high school. 
-                    Before my coding journey began, I was always intrigued by electronics—whether it was photography, 
-                    video games, or learning how computers were built.
-                </p>
-                <p>
-                    The first time I wrote code, I felt like I had truly found my calling. My first program was in
-                    Java—a simple "Hello, World!" script—but it sparked an excitement in me that has yet to fade. 
-                    Since then, I have loved discovering new and creative ways to code. Over the years, I've 
-                    realized that I enjoy building projects with a <b>visual component</b>. There's something incredible 
-                    about creating an application that anyone—regardless of their coding knowledge—can interact 
-                    with and see as a polished, professional product.
-                </p>
-                <p>
-                    Outside of coding, I love spending time with my family and friends, whether it's a <b>cozy night</b> in or an 
-                    <b>exciting adventure</b>. I have a deep appreciation for the outdoors and enjoy <b>backpacking, hiking, and 
-                    snowboarding in the mountains of New Mexico.</b> I'm also a huge fan of sports—whether it's <b>playing basketball, 
-                    watching soccer, or attending live games,</b> I love the energy and excitement that comes with it. When I'm 
-                    looking for a more laid-back experience, I enjoy <b>photography, exploring new restaurants, or getting lost in 
-                    a great movie or video game.</b>
-                </p>
-                <p>
-                    Ultimately, I strive to balance my love for technology with my passion for adventure, creativity,
-                    and human connection. One of the key ways I do this is by incorporating creativity and a sense of human
-                    connection into everything I code.
-                </p>
-            </div>
-        </body>
-    </html>
+    <div class="content-container">
+            <h1>About Me</h1>
+            <img src="./images/TitleImages/profileImage.jpg" alt="Cameron Fox" class="about-image">
+            <p>
+                Hello, my name is Cameron Fox. I am a Computer Science student at the University of New Mexico, 
+                born and raised in Albuquerque, New Mexico. My passion for computer science has been with me for 
+                as long as I can remember. However, I didn't start coding until after graduating high school. 
+                Before my coding journey began, I was always intrigued by electronics—whether it was photography, 
+                video games, or learning how computers were built.
+            </p>
+            <p>
+                The first time I wrote code, I felt like I had truly found my calling. My first program was in
+                Java—a simple "Hello, World!" script—but it sparked an excitement in me that has yet to fade. 
+                Since then, I have loved discovering new and creative ways to code. Over the years, I've 
+                realized that I enjoy building projects with a <b>visual component</b>. There's something incredible 
+                about creating an application that anyone—regardless of their coding knowledge—can interact 
+                with and see as a polished, professional product.
+            </p>
+            <p>
+                Outside of coding, I love spending time with my family and friends, whether it's a <b>cozy night</b> in or an 
+                <b>exciting adventure</b>. I have a deep appreciation for the outdoors and enjoy <b>backpacking, hiking, and 
+                snowboarding in the mountains of New Mexico.</b> I'm also a huge fan of sports—whether it's <b>playing basketball, 
+                watching soccer, or attending live games,</b> I love the energy and excitement that comes with it. When I'm 
+                looking for a more laid-back experience, I enjoy <b>photography, exploring new restaurants, or getting lost in 
+                a great movie or video game.</b>
+            </p>
+            <p>
+                Ultimately, I strive to balance my love for technology with my passion for adventure, creativity,
+                and human connection. One of the key ways I do this is by incorporating creativity and a sense of human
+                connection into everything I code.
+            </p>
+        </div>
 </section>
