@@ -2,13 +2,13 @@
 
 This is a personal project to teach myself **HTML, CSS,** and **JavaScript**. I am wanting to make the website into a portfolio of who I am and which languages I know, and what projects naturally intrigue me. 
 
-I feel as if this will be very similar to my resumé.
+I feel as if this will be very similar to my resumé.Just with a pretty design and more personal design than just words on a page.
 
 ## Goal
 My goal is to make this website a project that I am proud to show the people in my life who are not coders proud of me. I want the project to be a resource for future job oppertunities. A place for them to get to know more of who I am and be a placed where they are impressed with my skills. 
 
 ## Sections of Code
-+ Home Page
++ Home Page - *This has been Merged into About Me*
 + About Me
 + Work History
 + Coding Projects
@@ -16,8 +16,8 @@ My goal is to make this website a project that I am proud to show the people in 
 + Contact Page
 
 ### Idea for Overall Projects
-+ A quote, or Bible verse at the end of each page at the bottom. 
-+ Find a design style to continue in the header for all pages to make them match. 
++ A quote, or Bible verse to be added somewhere.
++ Find a design style to continue into each section but have small changes in each section.
 
 ### Break down of each Section
 #### Home Page 
