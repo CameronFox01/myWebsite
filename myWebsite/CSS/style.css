@@ -390,7 +390,8 @@ list-style-type: circle; /* makes subpoints different bullets */
     gap: 2px;
     flex-direction: column;
     align-items: flex-start;
-    box-shadow: 0 2px 14px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 16px #D2042D; /* This controls the Always Shadow */
+    transition: transform 0.2s ease, box-shadow 0.2s ease
 }
 
 .edu-logo {
@@ -398,6 +399,10 @@ list-style-type: circle; /* makes subpoints different bullets */
     min-width: 150px; /* Won't go smaller than 150px */
     height: auto;
     border-radius: 8px;
+}
+.edu-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 16px #C0C0C0; /*Controls the shadow when mouse is over it. */
 }
 
 .edu-details h1 {
