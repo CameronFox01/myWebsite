@@ -15,8 +15,6 @@
     </script>
     
     <style>
-    
-
         .navbar a:hover {
             text-decoration: underline;
         }
@@ -32,18 +30,10 @@
     </style>
 </head>
 <body>
-    <!-- Add this in if I want a speocific style for each section
-     #home { background-color: #151515; color: white; }
-        #about { background-color: #222; color: white; }
-        #university { background-color: #333; color: white; }
-        #coding-projects { background-color: #444; color: white; }
-        #work-history { background-color: #555; color: white; }
-        #contact-me { background-color: #666; color: white; }
-    -->
 
     <!-- Navbar -->
     <div class="navbar">
-        <a href="#home">Homee</a>
+        <a href="#home">Home</a>
         <a href="#coding-projects">Projects</a>
         <a href="#work-history">Work History</a>
         <a href="#university">University</a>
@@ -62,9 +52,9 @@
         // Define which HTML file loads into which section
         const sections = [
             { id: 'home', file: 'Pages/AboutPage.html' },
-            { id: 'university', file: 'Pages/school.html' },
             { id: 'coding-projects', file: 'Pages/codingPage.html' },
             { id: 'work-history', file: 'Pages/workHistory.html' },
+            { id: 'university', file: 'Pages/school.html' },
             { id: 'contact-me', file: 'Pages/ContactMe.html' }
         ];
 
@@ -77,6 +67,54 @@
                 })
                 .catch(err => console.error(`Error loading ${section.file}:`, err));
         });
+    </script>
+
+    <!-- Carousel JavaScript (must be global) -->
+    <script>
+        let currentSlideIndex = 1;
+        
+        function changeSlide(n) {
+            showSlide(currentSlideIndex += n);
+        }
+        
+        function currentSlide(n) {
+            showSlide(currentSlideIndex = n);
+        }
+        
+        function showSlide(n) {
+            const slides = document.getElementsByClassName("carousel-slide");
+            const dots = document.getElementsByClassName("dot");
+            
+            // Loop back to first slide
+            if (n > slides.length) {
+                currentSlideIndex = 1;
+            }
+            
+            // Loop to last slide - FIXED THIS LINE
+            if (n < 1) {
+                currentSlideIndex = slides.length;  // Changed from 'seeds.length' to 'slides.length'
+            }
+            
+            // Hide all slides
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].classList.remove("active");
+            }
+            
+            // Remove active from all dots
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].classList.remove("active");
+            }
+            
+            // Show current slide
+            if (slides.length > 0) {
+                slides[currentSlideIndex - 1].classList.add("active");
+            }
+            
+            // Show current dot
+            if (dots.length > 0) {
+                dots[currentSlideIndex - 1].classList.add("active");
+            }
+        }
     </script>
 
 </body>

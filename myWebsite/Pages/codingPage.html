@@ -45,8 +45,94 @@
                 </div>
             </div>
             <div class="working-section">
-                <h2 id="working-projects">Currently Working on Projects</h2>
-                <p>
+                <h2 id="working-projects">Past Projects</h2>
+
+                <div class="carousel-container">
+                    <!-- Left Arrow -->
+                    <button class="carousel-arrow left-arrow" onclick="changeSlide(-1)">&#10094;</button>
+                    
+                    <!-- Images -->
+                    <div class="carousel-images">
+                        <img src="images/ProjectImages/AuctionImage.png" alt="Auction House" class="carousel-slide active" style="background-color: #1c1d1d;">
+                        <img src="images/ProjectImages/CalculatorImage.png" alt="Project 2" class="carousel-slide" style="background-color: #d9d9d9;">
+                        <img src="images/ProjectImages/GalaxySimulatorImage.png" alt="Project 3" class="carousel-slide" style="background-color: #000000;">
+                        <img src="images/ProjectImages/MazeImage.png" alt="Project 4" class="carousel-slide" style="background-color: #d9d9d9;">
+                        <img src="images/ProjectImages/TallyCounterImage.png" alt="Project 5" class="carousel-slide" style="background-color: #d9d9d9;">
+                    </div>
+                    
+                    <!-- Right Arrow -->
+                    <button class="carousel-arrow right-arrow" onclick="changeSlide(1)">&#10095;</button>
+                </div>
+            
+            <div class="idea-section">
+            <h2 id="coding-ideas">Coding Ideas?</h2>
+            <p>
+                Do you have a project idea you'd like to see brought to life? Share it with me below! 
+                Feel free to provide as much or as little detail as you wish. If your idea is selected,
+                I'll develop it and prominently credit you for your contribution.
+            </p>
+            <form action="save_data.php" method="POST">
+                <fieldset class="fieldset-style">
+                    <legend>Project Submission</legend>
+                    <label>Email: <br />
+                        <input type="text" name="email" />
+                    </label><br />
+                    <label>Project Idea: <br />
+                        <textarea name="comments" cols="20" rows="4"></textarea>
+                    </label><br />
+                    <input type="submit" value="Submit"/>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        let currentSlideIndex = 1;
+        
+        function changeSlide(n) {
+            showSlide(currentSlideIndex += n);
+        }
+        
+        function currentSlide(n) {
+            showSlide(currentSlideIndex = n);
+        }
+        
+        function showSlide(n) {
+            const slides = document.getElementsByClassName("carousel-slide");
+            const dots = document.getElementsByClassName("dot");
+            
+            // Loop back to first slide
+            if (n > slides.length) {
+                currentSlideIndex = 1;
+            }
+            
+            // Loop to last slide
+            if (n < 1) {
+                currentSlideIndex = slides.length;
+            }
+            
+            // Hide all slides
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].classList.remove("active");
+            }
+            
+            // Remove active from all dots
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].classList.remove("active");
+            }
+            
+            // Show current slide and dot
+            slides[currentSlideIndex - 1].classList.add("active");
+            dots[currentSlideIndex - 1].classList.add("active");
+        }
+        </script>
+</section>
+
+
+
+<!--
+
+     <p>
                     The projects I am currently working on and the languages they are being written in are as follows.
                     <ul>
                         <li><b>Pit Bull Rescue Website</b> This is a project I am working on for a pit bull rescue.
@@ -202,26 +288,4 @@
                     </ul>
                 </p>
             </div>
-            
-            <div class="idea-section">
-            <h2 id="coding-ideas">Coding Ideas?</h2>
-            <p>
-                Do you have a project idea you'd like to see brought to life? Share it with me below! 
-                Feel free to provide as much or as little detail as you wish. If your idea is selected,
-                I'll develop it and prominently credit you for your contribution.
-            </p>
-            <form action="save_data.php" method="POST">
-                <fieldset class="fieldset-style">
-                    <legend>Project Submission</legend>
-                    <label>Email: <br />
-                        <input type="text" name="email" />
-                    </label><br />
-                    <label>Project Idea: <br />
-                        <textarea name="comments" cols="20" rows="4"></textarea>
-                    </label><br />
-                    <input type="submit" value="Submit"/>
-                </fieldset>
-            </form>
-        </div>
-    </div>
-</section>
+-->
