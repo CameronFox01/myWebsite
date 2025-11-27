@@ -1,85 +1,13 @@
-<!DOCTYPE html>
 <section id="contact-me">
-    <html lang="es">
-        <head>
-            <title>Contact Me</title>
-            <script>
-                fetch("../GlobalCode/head.html")
-                    .then(res => res.text())
-                    .then(data => {
-                        document.head.insertAdjacentHTML("beforeend", data);
-                    });
-            </script>
-            <style>
-        .contact-me {
-            max-width: 920px; /* Set a max width so text isn't too wide */
-            margin: 50px auto; /* Center it horizontally */
-            padding: 20px;
-            /*background: white; */ /* Optional: Adds contrast if background is different */
-            border-radius: 10px; /* Optional: Soft rounded edges */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a slight shadow */
-            font-family: "Arial", sans-serif; /* Change font */
-            font-size: 20px; /* Make text slightly bigger */
-            line-height: 1.6; /* Improve readability */
-        }
-            .contact-me ul {
-                padding: 0;
-            }
+    <div class="contact-me bullet_list_language content-container">
+        <h1>Contact Me</h1>
+        <p>If you'd like to connect, collaborate, or talk about a project, feel free to reach out through any of the platforms below:</p>
 
-            .contact-me li {
-                margin-bottom: 10px; /* Add space between list items */
-                margin-left: 50px ;
-                text-align: left; /* Align text to the left */
-            }
-
-            .contact-me li b {
-                font-weight: bold; /* Bold the first word */
-                margin-right: 5px; /* Add spacing between bold word & text */
-            }
-
-            .contact-me a {
-                color: #0073e6; /* Optional: Make links stand out */
-                text-decoration: none; /* Remove underline */
-            }
-
-            .contact-me a:hover {
-                text-decoration: underline; /* Underline on hover */
-            }
-
-            </style>
-        </head>
-        <body>
-            <!-- Placeholder where the navigation will be inserted -->
-        <div id="nav-placeholder"></div>
-
-        <!-- JavaScript to load the navigation bar -->
-        <script>
-            fetch("../GlobalCode/navbar.html")
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById("nav-placeholder").innerHTML = data;
-                })
-                .catch(error => console.error("Error loading navbar:", error));
-        </script>
-
-    <div class="contact-me">
-            <h1>Contact Me</h1>
-            <p>
-                I'm always happy to connect with fellow developers, collaborators, 
-                and anyone interested in my projects. Here's how you can reach me:
-            </p>
-            <ul>
-                <li><b>Email:</b> For direct inquiries or project proposals, please email me at  
-                    <a href="mailto:cameron22401@gmail.com">cameron22401@icloud.com</a></li>
-                <li><b>LinkedIn:</b> Connect with me professionally on LinkedIn:
-                    <a href="https://www.linkedin.com/in/cameron-fox-296965319/">cameron-fox-296965319</a></li>
-                <li><b>GitHub:</b> Explore my coding projects and contributions on GitHub: 
-                    <a href="https://github.com/CameronFox01">CameronFox01</a></li>
-                <li><b>Instagram:</b> Follow me for behind-the-scenes updates and personal insights: 
-                    <a href="https://www.instagram.com/the_coding_fox/?next=%2F&hl=en">@the_coding_fox</a></li>
-            </ul>
-        </div>
-
-        </body>
-    </html>
+        <ul class="contact-list">
+            <li><b>Email:</b> <a href="mailto:cameron22401@icloud.com">cameron22401@icloud.com</a></li>
+            <li><b>LinkedIn:</b> <a href="https://www.linkedin.com/in/cameron-fox-296965319/">linkedin.com/in/cameron-fox</a></li>
+            <li><b>GitHub:</b> <a href="https://github.com/CameronFox01">github.com/CameronFox01</a></li>
+            <li><b>Instagram:</b> <a href="https://www.instagram.com/the_coding_fox/">@the_coding_fox</a></li>
+        </ul>
+    </div>
 </section>
