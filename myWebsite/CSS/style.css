@@ -52,6 +52,7 @@ body {
 
 .bullet_list_language {
     text-align: center; /* Center the list container */
+    white-space: nowrap;  /* Prevent line breaks */
 }
 
 .bullet_list_language ul {
@@ -60,10 +61,11 @@ body {
     padding-left: 0; /* Remove default left padding */
     list-style-position: inside; /* Align bullets with text */
 }
-    .bullet_list_language ul ul {
-    margin-left: 20px; /* controls indentation of subpoints */
-    list-style-type: circle; /* makes subpoints different bullets */
-    }
+
+.bullet_list_language ul ul {
+margin-left: 20px; /* controls indentation of subpoints */
+list-style-type: circle; /* makes subpoints different bullets */
+}
 
 .content-container {
     max-width: 1000px; /* Set a max width so text isn't too wide */
