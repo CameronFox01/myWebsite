@@ -52,10 +52,16 @@ body {
 
 .bullet_list_language {
     text-align: center; /* Center the list container */
-    white-space: nowrap;  /* Prevent line breaks */
+    white-space: nowrap; /* Prevent line breaks */
+}
+
+/* Remove margin from last item in each list */
+.bullet_list_language li:last-child {
+    margin-bottom: 0;
 }
 
 .bullet_list_language ul {
+    
     display: inline-block; /* Allows proper centering */
     text-align: left; /* Align text inside the list */
     padding-left: 0; /* Remove default left padding */
