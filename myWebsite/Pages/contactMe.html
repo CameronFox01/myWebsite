@@ -1,13 +1,53 @@
 <section id="contact-me">
-    <div class="contact-me bullet_list_language content-container">
+    <div class="contact-container content-container">
         <h1>Contact Me</h1>
-        <p>If you'd like to connect, collaborate, or talk about a project, feel free to reach out through any of the platforms below:</p>
+        
+        <div class="contact-flex">
+            <!-- Left side: Form -->
+            <div class="contact-form-side">
+                <h2>Send Me a Message</h2>
+                <p>Have a project idea or want to collaborate? Fill out the form below!</p>
+                <form action="save_data.php" method="POST">
+                    <fieldset class="fieldset-style">
+                        <legend>Get in Touch</legend>
+                        <label>Name: <br />
+                            <input type="text" name="name" required />
+                        </label>
+                        <label>Email: <br />
+                            <input type="email" name="email" required />
+                        </label>
+                        <label>Message: <br />
+                            <textarea name="comments"></textarea>
+                        </label>
+                        <input type="submit" value="Submit"/>
+                    </fieldset>
+                </form>
+            </div>
 
-        <ul class="contact-list">
-            <li><b>Email:</b> <a href="mailto:cameron22401@icloud.com">cameron22401@icloud.com</a></li>
-            <li><b>LinkedIn:</b> <a href="https://www.linkedin.com/in/cameron-fox-296965319/">linkedin.com/in/cameron-fox</a></li>
-            <li><b>GitHub:</b> <a href="https://github.com/CameronFox01">github.com/CameronFox01</a></li>
-            <li><b>Instagram:</b> <a href="https://www.instagram.com/the_coding_fox/">@the_coding_fox</a></li>
-        </ul>
+            <!-- Right side: Contact Links -->
+            <div class="contact-links-side">
+                <h2>Connect With Me</h2>
+                <p>Feel free to reach out through any of these platforms:</p>
+                
+                <ul class="contact-list">
+                    <li>
+                        <b>Email:</b><br />
+                        <a href="mailto:cameron22401@icloud.com">cameron22401@icloud.com</a>
+                    </li>
+                    <li>
+                        <b>LinkedIn:</b><br />
+                        <a href="https://www.linkedin.com/in/cameron-fox-296965319/" target="_blank">linkedin.com/in/cameron-fox</a>
+                    </li>
+                    <li>
+                        <b>GitHub:</b><br />
+                        <a href="https://github.com/CameronFox01" target="_blank">github.com/CameronFox01</a>
+                    </li>
+                    <li>
+                        <b>Instagram:</b><br />
+                        <a href="https://www.instagram.com/the_coding_fox/" target="_blank">@the_coding_fox</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
 </section>

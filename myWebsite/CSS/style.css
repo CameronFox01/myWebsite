@@ -440,3 +440,89 @@ list-style-type: circle; /* makes subpoints different bullets */
     margin-left: 20px;
 }
 
+/* Contact section container */
+.contact-container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 40px;
+}
+
+.contact-container h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 36px;
+}
+
+/* Flex container for side-by-side layout */
+.contact-flex {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+/* Left side - Form */
+.contact-form-side {
+    flex: 1;
+    padding: 20px;
+}
+
+.contact-form-side h2 {
+    margin-top: 0;
+    font-size: 24px;
+}
+
+/* Right side - Links */
+.contact-links-side {
+    flex: 1;
+    padding: 20px;
+}
+
+.contact-links-side h2 {
+    margin-top: 0;
+    font-size: 24px;
+}
+
+/* Contact list styling */
+.contact-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.contact-list li {
+    margin-bottom: 25px;
+    padding: 15px;
+    background: #2a2a2a;
+    border-radius: 8px;
+    border-left: 4px solid #4CAF50;
+}
+
+.contact-list b {
+    color: #4CAF50;
+    font-size: 18px;
+}
+
+.contact-list a {
+    color: #66b3ff;
+    text-decoration: none;
+    display: block;
+    margin-top: 5px;
+}
+
+.contact-list a:hover {
+    color: #99ccff;
+    text-decoration: underline;
+}
+
+/* Make form fieldset fit better */
+.contact-form-side .fieldset-style {
+    width: 100%;
+    margin: 0;
+}
+
+/* Responsive: stack on mobile */
+@media (max-width: 768px) {
+    .contact-flex {
+        flex-direction: column;
+    }
+}
