@@ -2,14 +2,16 @@
     <div class="contact-container content-container">
         <h1>Contact Me</h1>
         
-        <div class="contact-flex">
-            <!-- Left side: Form -->
-            <div class="contact-form-side">
-                <h2>Send Me a Message</h2>
-                <p>Have a project idea or want to collaborate? Fill out the form below!</p>
-                <form action="save_data.php" method="POST">
-                    <fieldset class="fieldset-style">
-                        <legend>Get in Touch</legend>
+        <!-- Single fieldset wrapping both sides -->
+        <fieldset class="fieldset-style contact-main-box">
+            <legend>Get in Touch</legend>
+            
+            <div class="contact-flex">
+                <!-- Left side: Form -->
+                <div class="contact-form-side">
+                    <h2>Send Me a Message</h2>
+                    <p>Have a project idea or want to collaborate? Fill out the form below!</p>
+                    <form action="save_data.php" method="POST">
                         <label>Name: <br />
                             <input type="text" name="name" required />
                         </label>
@@ -20,34 +22,34 @@
                             <textarea name="comments"></textarea>
                         </label>
                         <input type="submit" value="Submit"/>
-                    </fieldset>
-                </form>
-            </div>
+                    </form>
+                </div>
 
-            <!-- Right side: Contact Links -->
-            <div class="contact-links-side">
-                <h2>Connect With Me</h2>
-                <p>Feel free to reach out through any of these platforms:</p>
-                
-                <ul class="contact-list">
-                    <li>
-                        <b>Email:</b><br />
-                        <a href="mailto:cameron22401@icloud.com">cameron22401@icloud.com</a>
-                    </li>
-                    <li>
-                        <b>LinkedIn:</b><br />
-                        <a href="https://www.linkedin.com/in/cameron-fox-296965319/" target="_blank">linkedin.com/in/cameron-fox</a>
-                    </li>
-                    <li>
-                        <b>GitHub:</b><br />
-                        <a href="https://github.com/CameronFox01" target="_blank">github.com/CameronFox01</a>
-                    </li>
-                    <li>
-                        <b>Instagram:</b><br />
-                        <a href="https://www.instagram.com/the_coding_fox/" target="_blank">@the_coding_fox</a>
-                    </li>
-                </ul>
+                <!-- Right side: Contact Links -->
+                <div class="contact-links-side">
+                    <h2>Connect With Me</h2>
+                    <p>Feel free to reach out through any of these platforms:</p>
+                    
+                    <ul class="contact-list">
+                        <li>
+                            <b>Email:</b><br />
+                            <a href="mailto:cameron22401@icloud.com">cameron22401@icloud.com</a>
+                        </li>
+                        <li>
+                            <b>LinkedIn:</b><br />
+                            <a href="https://www.linkedin.com/in/cameron-fox-296965319/" target="_blank">linkedin.com/in/cameron-fox</a>
+                        </li>
+                        <li>
+                            <b>GitHub:</b><br />
+                            <a href="https://github.com/CameronFox01" target="_blank">github.com/CameronFox01</a>
+                        </li>
+                        <li>
+                            <b>Instagram:</b><br />
+                            <a href="https://www.instagram.com/the_coding_fox/" target="_blank">@the_coding_fox</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
+        </fieldset>
     </div>
 </section>
