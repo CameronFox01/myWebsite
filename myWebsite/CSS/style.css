@@ -51,7 +51,7 @@ body {
 }
 
 .bullet_list_language {
-    text-align: center; /* Center the list container */
+    text-align: left; /* Center the list container */
     white-space: nowrap; /* Prevent line breaks */
 }
 
@@ -201,7 +201,7 @@ list-style-type: circle; /* makes subpoints different bullets */
 /* Flex container for side-by-side language sections */
 .languages-flex-container {
     display: flex;
-    gap: 40px; /* Space between columns */
+    gap: 200px; /* Space between columns */
     margin: 30px 0;
     justify-content: center;
 }
