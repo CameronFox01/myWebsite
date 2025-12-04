@@ -56,7 +56,7 @@ body {
 }
 
 .bullet_list_language {
-    text-align: left; /* Center the list container */
+    text-align: center; /* Center the list container */
     white-space: nowrap; /* Prevent line breaks */
 }
 
@@ -68,7 +68,7 @@ body {
 .bullet_list_language ul {
     
     display: inline-block; /* Allows proper centering */
-    text-align: left; /* Align text inside the list */
+    text-align: center; /* Align text inside the list */
     padding-left: 0; /* Remove default left padding */
     list-style-position: inside; /* Align bullets with text */
 }
@@ -88,6 +88,7 @@ list-style-type: circle; /* makes subpoints different bullets */
     font-family: "Arial", sans-serif; /* Change font */
     font-size: 20px; /* Make text slightly bigger */
     line-height: 1.6; /* Improve readability */
+    text-align: center; /* Center align all text */
 }
 .working-section li:not(:last-child),
 .Past-projects-section li:not(:last-child) {
