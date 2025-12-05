@@ -591,7 +591,7 @@ list-style-type: circle; /* makes subpoints different bullets */
 .contact-main-box {
     width: 100%;
     margin: 0;
-    padding: 30px;
+    padding: 0px;
 }
 
 .contact-main-box .contact-flex {
