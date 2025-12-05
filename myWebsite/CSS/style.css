@@ -494,7 +494,18 @@ list-style-type: circle; /* makes subpoints different bullets */
 
 .contact-links-side h2 {
     margin-top: 0;
-    font-size: 24px;
+    font-size: 32px;
+}
+
+.contact-links-side a {
+    color: #FFFFFF; /* Bright white */
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.contact-links-side a:hover {
+    color: #00D9FF; /* Bright cyan */
+    text-decoration: underline;
 }
 
 /* Contact list styling */
