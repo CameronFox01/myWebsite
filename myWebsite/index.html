@@ -95,7 +95,7 @@
         function showSlide(n) {
             const slides = document.getElementsByClassName("carousel-slide");
             const dots = document.getElementsByClassName("dot");
-            
+            const arrows = document.getElementsByClassName("carousel-arrow");
             // Loop back to first slide
             if (n > slides.length) {
                 currentSlideIndex = 1;
@@ -118,13 +118,65 @@
             
             // Show current slide
             if (slides.length > 0) {
-                slides[currentSlideIndex - 1].classList.add("active");
+                const activeSlideImage = slides[currentSlideIndex - 1];
+                activeSlideImage.classList.add("active");
+
+                // 1. Get the slide's background color (e.g., "#1c1d1d")
+                const slideBgColor = activeSlideImage.style.backgroundColor; 
+                
+                // 2. Determine the color for the ARROW background
+                let arrowBgColor;
+                let arrowTextColor;
+
+                // NOTE: If your colors are not pure hex, you'll need to adjust isColorLight() 
+                // to handle the different format (like 'rgb(r, g, b)').
+                // Assuming your manual styles are 6-digit hex codes (e.g., #1c1d1d)
+                
+                // For demonstration, let's use a simple light/dark contrast for the arrows:
+                if (slideBgColor === 'rgb(28, 29, 29)' || slideBgColor === '#1c1d1d' || slideBgColor === 'rgb(0, 0, 0)') { 
+                    // If the slide background is dark (like #1c1d1d or black)
+                    arrowBgColor = 'rgba(255, 255, 255, 0.7)'; // Light background for contrast
+                    arrowTextColor = '#000000'; // Black text/symbol
+                    hoverClassName = 'arrow-hover-dark-slide'; // Choose the class for dark slides
+                } else { 
+                    // If the slide background is light (like #d9d9d9 or white)
+                    arrowBgColor = 'rgba(0, 0, 0, 0.7)'; // Dark background for contrast
+                    arrowTextColor = '#ffffff'; // White text/symbol
+                    hoverClassName = 'arrow-hover-light-slide'; // Choose the class for light slides
+                }
+
+                    // 3. Apply the contrasting colors to BOTH arrows
+                    for (let i = 0; i < arrows.length; i++) {
+                        arrows[i].classList.remove('arrow-hover-dark-slide', 'arrow-hover-light-slide');
+                        arrows[i].style.backgroundColor = arrowBgColor; 
+                        arrows[i].style.color = arrowTextColor; 
+                        // Apply the correct hover class!
+                        arrows[i].classList.add(hoverClassName);
+                    }
+                }
+                
+                // Show current dot
+                if (dots.length > 0) {
+                    dots[currentSlideIndex - 1].classList.add("active");
+                }
             }
+
+        // Function to determine if a color is light or dark
+        function isColorLight(hexColor) {
+            // 1. Remove the '#' if it exists
+            const hex = hexColor.replace('#', '');
             
-            // Show current dot
-            if (dots.length > 0) {
-                dots[currentSlideIndex - 1].classList.add("active");
-            }
+            // 2. Convert to RGB values
+            const r = parseInt(hex.substring(0, 2), 16);
+            const g = parseInt(hex.substring(2, 4), 16);
+            const b = parseInt(hex.substring(4, 6), 16);
+            
+            // 3. Calculate perceived luminosity (Luminosity Formula)
+            // The coefficients (0.2126, 0.7152, 0.0722) are weighted based on human eye sensitivity.
+            const luminosity = (0.2126 * r) + (0.7152 * g) + (0.0722 * b);
+
+            // 4. Return true if luminosity is above a threshold (e.g., 128 out of 255)
+            return luminosity > 128;
         }
     </script>
 
