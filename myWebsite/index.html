@@ -178,6 +178,10 @@
             // 4. Return true if luminosity is above a threshold (e.g., 128 out of 255)
             return luminosity > 128;
         }
+        // Initialize carousel on page load
+        setTimeout(function() {
+            showSlide(currentSlideIndex);
+        }, 100); // Small delay to ensure DOM is ready
     </script>
 
 </body>

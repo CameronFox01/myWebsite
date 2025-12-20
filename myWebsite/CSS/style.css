@@ -36,6 +36,8 @@ body::before {
     height: 500px;
     object-fit: cover;
     margin: 0;
+    border-bottom: 3px solid;
+    border-image: linear-gradient(to right, #2196F3, #9C27B0, #f205ea) 1;
 }
 
 .navbar {
