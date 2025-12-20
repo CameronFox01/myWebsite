@@ -33,7 +33,7 @@ body::before {
 .header-container img {
     display: block;
     width: 100%;
-    height: 500px;
+    height: auto;
     object-fit: cover;
     margin: 0;
     border-bottom: 3px solid;
@@ -43,7 +43,8 @@ body::before {
 .navbar {
     width: 100%;
     background-color: #000000;
-    border-bottom: 2px solid #707070; /* Light gray border */
+    border-bottom: 3px solid;
+    border-image: linear-gradient(to right, #2196F3, #9C27B0, #f205ea) 1;
     padding: 0px 0;
     text-align: center;
     position: sticky;
@@ -55,15 +56,128 @@ body::before {
 }
 
 .navbar a {
-    color: white;
+    color: #b4a5a5;
     text-decoration: none;
     margin: 0 40px;
     font-size: 32px;
     font-weight: bold;
 }
 
+/* Tablet and smaller screens */
+@media (max-width: 1024px) {
+    .navbar a {
+        font-size: 28px;
+        margin: 0 30px;
+    }
+}
+
+/* Small tablets and large phones */
+@media (max-width: 768px) {
+    .navbar a {
+        font-size: 24px;
+        margin: 0 20px;
+    }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+    .navbar a {
+        font-size: 20px;
+        margin: 0 10px;
+    }
+}
+
 .navbar a:hover {
     text-decoration: underline;
+}
+
+/* Navbar transitions */
+.navbar {
+    transition: all 0.3s ease;
+}
+
+/* Hamburger menu button (hidden by default) */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 50px;
+    height: 50px;
+    background: #333;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 2000;
+    padding: 10px;
+}
+
+/* Gradient border using ::before */
+.hamburger::before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    background: linear-gradient(to right, #2196F3, #9C27B0, #f205ea);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.hamburger span {
+    width: 100%;
+    height: 3px;
+    background: white;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+/* When scrolled, hide full navbar and show hamburger */
+.navbar.scrolled .navbar-links {
+    display: none;
+}
+
+.navbar.scrolled ~ .hamburger {
+    display: flex;
+}
+
+/* When hamburger is active (clicked), show menu */
+.hamburger.active ~ .navbar .navbar-links,
+.navbar.menu-open .navbar-links {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    background: #333;
+    border: none;
+    border-image: linear-gradient(to right, #2196F3, #9C27B0, #f205ea) 1;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+.navbar.menu-open .navbar-links a {
+    margin: 10px 0;
+    color: white;
+}
+
+/* Hamburger animation when active */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(8px, -8px);
 }
 
 .bullet_list_language {
@@ -100,6 +214,7 @@ list-style-type: circle; /* makes subpoints different bullets */
     font-size: 20px; /* Make text slightly bigger */
     line-height: 1.6; /* Improve readability */
     text-align: center; /* Center align all text */
+    color: whitesmoke; /* Softer text color */
 }
 .working-section li:not(:last-child),
 .Past-projects-section li:not(:last-child) {

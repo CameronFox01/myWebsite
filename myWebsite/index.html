@@ -44,12 +44,21 @@
 
     <!-- Navbar -->
     <div class="navbar">
-        <a href="#home">Home</a>
-        <a href="#coding-projects">Projects</a>
-        <a href="#work-history">Work History</a>
-        <a href="#university">My Education</a>
-        <a href="#contact-me">Contact Me</a>
+        <div class="navbar-links">
+            <a href="#home">Home</a>
+            <a href="#coding-projects">Projects</a>
+            <a href="#work-history">Work History</a>
+            <a href="#university">My Education</a>
+            <a href="#contact-me">Contact Me</a>
+        </div>
     </div>
+
+    <!-- Hamburger button -->
+    <button class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
 
     <!-- Sections with dynamic content loading -->
     <section id="home"></section>
@@ -182,6 +191,40 @@
         setTimeout(function() {
             showSlide(currentSlideIndex);
         }, 100); // Small delay to ensure DOM is ready
+    </script>
+
+    <script>
+        // Hamburger menu functionality
+        const navbar = document.querySelector('.navbar');
+        const hamburger = document.getElementById('hamburger');
+        let lastScroll = 0;
+
+        // Show/hide hamburger based on scroll position
+        window.addEventListener('scroll', function() {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+                navbar.classList.remove('menu-open');
+                hamburger.classList.remove('active');
+            }
+        });
+
+        // Toggle menu on hamburger click
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            navbar.classList.toggle('menu-open');
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.navbar a').forEach(link => {
+            link.addEventListener('click', function() {
+                hamburger.classList.remove('active');
+                navbar.classList.remove('menu-open');
+            });
+        });
     </script>
 
 </body>
