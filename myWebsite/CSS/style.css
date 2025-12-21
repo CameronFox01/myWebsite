@@ -338,28 +338,87 @@ list-style-type: circle; /* makes subpoints different bullets */
     justify-content: center;
 }
 
-.language-column {
+.languages-column {
     flex: 1; /* Each column takes equal space */
     max-width: 450px;
     padding: 20px;
-    border: 2px solid #666;
     border-radius: 10px;
-    background-color: #1a1a1a;
 }
 
-.language-column p {
+.languages-column p {
     margin-top: 0;
     font-size: 18px;
 }
 
+.languages-column img{
+    margin-bottom: 15px; 
+   vertical-align: middle;
+}
+.languages-column li{
+     list-style-type: none;
+    margin-bottom: 15px;
+}
 /* Responsive: stack on mobile */
 @media (max-width: 768px) {
     .languages-flex-container {
         flex-direction: column;
+        gap: 15px;
     }
     
-    .language-column {
+    .languages-column {
         max-width: 100%;
+    }
+       /* Stack nested language columns vertically */
+    .languages-column .languages-flex-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .bullet_list_language {
+        width: 100%;
+    }
+    
+    /* Make icons smaller on mobile */
+    .languages-icon {
+        width: 35px;
+        height: 35px;
+    }
+    
+    #java-icon {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* Responsive: tablets */
+@media (max-width: 1024px) {
+    .languages-flex-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .languages-column {
+        max-width: 100%;
+    }
+       /* Stack nested language columns vertically */
+    .languages-column .languages-flex-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .bullet_list_language {
+        width: 100%;
+    }
+    
+    /* Make icons smaller on mobile */
+    .languages-icon {
+        width: 35px;
+        height: 35px;
+    }
+    
+    #java-icon {
+        width: 50px;
+        height: 50px;
     }
 }
 
@@ -494,7 +553,23 @@ list-style-type: circle; /* makes subpoints different bullets */
     padding: 20px 24px;
     box-shadow: 0 2px 10px rgb(97, 23, 216); /* This controls the Always Shadow */    
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    cursor: default;
+    cursor: pointer;
+    position: relative;
+}
+
+/* Header layout with icon */
+.work-card-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Work icon styling */
+.work-icon {
+    height: 80px;
+    width: auto;
+    flex-shrink: 0;
 }
 
 .work-card:hover {
@@ -507,6 +582,14 @@ list-style-type: circle; /* makes subpoints different bullets */
     max-height: 200px; /* Set this higher than the expected maximum height of the list */
     opacity: 1;
     padding-top: 10px; /* Add some space above the list when visible */
+    padding-bottom: 10px;
+}
+
+/* Show content when clicked/expanded (mobile) */
+.work-card.expanded ul {
+    max-height: 300px;
+    opacity: 1;
+    padding-top: 10px;
     padding-bottom: 10px;
 }
 
@@ -537,6 +620,37 @@ list-style-type: circle; /* makes subpoints different bullets */
 .work-card li {
     margin-bottom: 6px;
     line-height: 1.4;
+    text-align: left; /* Left align list items */
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+    .work-card {
+        padding: 15px;
+    }
+    
+    .work-card-header {
+        flex-direction: row; /* Keep icon and text side by side */
+        align-items: flex-start;
+    }
+    
+    .work-icon {
+        height: 60px; /* Smaller on mobile */
+    }
+    
+    .work-card h3 {
+        font-size: 1.1rem;
+    }
+    
+}
+@media (max-width: 480px) {
+    .work-icon {
+        height: 50px; /* Even smaller on very small screens */
+    }
+    
+    .work-card h3 {
+        font-size: 1rem;
+    }
 }
 
 .education-section {
