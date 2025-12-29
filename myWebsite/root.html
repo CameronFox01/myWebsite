@@ -64,6 +64,29 @@ body {
     list-style-type: none;
 
 }
+/*Profile Image Editor */ 
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Makes it circular */
+    object-fit: cover;
+    object-position: center; /* Centers the crop */
+    margin-bottom: 30px;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+     image-rendering: -webkit-optimize-contrast; /* For Safari */
+    image-rendering: crisp-edges; /* For other browsers */
+    -webkit-backface-visibility: hidden; /* Prevents blur on transform */
+    backface-visibility: hidden;
+    z-index: 10; /* Brings image above the blur layer */
+}
+
+.profile-image:hover {
+    transform: scale(1.05);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
 /* Large screens (desktops, 1200px to 1919px) */
 @media (min-width: 1200px) and (max-width: 1919px) {
     #root-directory h1 {
@@ -77,6 +100,10 @@ body {
     #root-directory nav a {
         padding: 18px 35px;
         font-size: 24px;
+    }
+       .profile-image {
+        width: 120px;
+        height: 120px;
     }
 }
 
@@ -94,6 +121,10 @@ body {
         padding: 16px 30px;
         font-size: 22px;
     }
+       .profile-image {
+        width: 120px;
+        height: 120px;
+    }
 }
 
 /* Small tablets (768px to 991px) */
@@ -110,6 +141,10 @@ body {
         padding: 14px 25px;
         margin-top: 50px;
         font-size: 50px;
+    }
+       .profile-image {
+        width: 200px;
+        height: 200px;
     }
 }
 /* Mobile landscape / small tablets (576px to 767px) */
@@ -158,14 +193,19 @@ body {
         padding: 10px 15px;  /* Changed from 30px 45px */
         font-size: 14px;  /* Changed from 40px */
     }
+        .profile-image {
+        width: 100px;
+        height: 100px;
+    }
 }
 </style>
 
 
 <section id="root-directory">
     <div class="content-container">
-      <h1>Welcome to Cameron's Link's!</h1>
-      <p>Use the navigation links below to explore different websites.</p>
+      <img src="images/TitleImages/CFIcon.png" alt="Cameron Fox" class="profile-image">
+      <h1>Welcome to Cameron Fox's Links!</h1>
+      <p>Find my website, projects, and professional profiles below.</p>
       <nav>
         <ul>
           <li><a href="http://cameronfox.me">My Website</a></li>
