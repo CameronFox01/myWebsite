@@ -1,0 +1,193 @@
+<style>
+body {
+    margin: 0;
+    padding: 0;
+}
+#root-directory {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 20px;
+    background-color: #4a4a4a;
+}
+
+#root-directory .content-container {
+    max-width: 800px;
+    text-align: center;
+}
+
+#root-directory h1 {
+    align-items: center;
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+#root-directory p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #f4f4f4;
+}
+
+#root-directory nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+#root-directory nav li {
+    width: 100%;
+    max-width: 400px;
+}
+
+#root-directory nav a {
+    display: block;
+    padding: 15px 30px;
+    background: #3c3c3c;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 10px;
+    border: 2px solid #666;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+#root-directory nav a:hover {
+    background: #4a4a4a;
+    border-color: #99ccff;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 202, 237, 0.5);
+}
+
+/* Extra large screens (large desktops, 1920px and up) */
+@media (min-width: 1920px) {
+    #root-directory h1 {
+        font-size: 70px;
+    }
+    
+    #root-directory p {
+        font-size: 32px;
+    }
+    
+    #root-directory nav a {
+        padding: 20px 40px;
+        font-size: 28px;
+    }
+}
+
+/* Large screens (desktops, 1200px to 1919px) */
+@media (min-width: 1200px) and (max-width: 1919px) {
+    #root-directory h1 {
+        font-size: 60px;
+    }
+    
+    #root-directory p {
+        font-size: 28px;
+    }
+    
+    #root-directory nav a {
+        padding: 18px 35px;
+        font-size: 24px;
+    }
+}
+
+/* Medium screens (tablets landscape, 992px to 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    #root-directory h1 {
+        font-size: 55px;
+    }
+    
+    #root-directory p {
+        font-size: 24px;
+    }
+    
+    #root-directory nav a {
+        padding: 16px 30px;
+        font-size: 22px;
+    }
+}
+
+/* Small tablets (768px to 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    #root-directory h1 {
+        font-size: 50px;
+    }
+    
+    #root-directory p {
+        font-size: 22px;
+    }
+    
+    #root-directory nav a {
+        padding: 14px 25px;
+        font-size: 20px;
+    }
+}
+
+/* Mobile landscape / small tablets (576px to 767px) */
+@media (min-width: 576px) and (max-width: 767px) {
+    #root-directory h1 {
+        font-size: 45px;
+    }
+    
+    #root-directory p {
+        font-size: 20px;
+    }
+    
+    #root-directory nav a {
+        padding: 12px 20px;
+        font-size: 18px;
+    }
+}
+
+/* Mobile portrait (up to 575px) */
+@media (max-width: 575px) {
+    #root-directory h1 {
+        font-size: 40px;
+    }
+    
+    #root-directory p {
+        font-size: 18px;
+    }
+    
+    #root-directory nav a {
+        padding: 12px 20px;
+        font-size: 16px;
+    }
+}
+
+/* Extra small phones (up to 375px) */
+@media (max-width: 375px) {
+    #root-directory h1 {
+        font-size: 32px;
+    }
+    
+    #root-directory p {
+        font-size: 16px;
+    }
+    
+    #root-directory nav a {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+}
+</style>
+
+<section id="root-directory">
+    <div class="root-directory">
+      <h1>Welcome to Cameron's Root Directory!</h1>
+      <p>This is the root directory of my websites. Use the navigation links below to explore different pages.</p>
+      <nav>
+        <ul>
+          <li><a href="http://cameronfox.me">My Website</a></li>
+          <li><a href="https://www.linkedin.com/in/cameron-fox-296965319/">LinkedIn</a></li>
+          <li><a href="https://github.com/CameronFox01">GitHub</a></li>
+        </ul>
+      </nav>
+    </div>
+  </section>
+  
