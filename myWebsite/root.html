@@ -117,70 +117,71 @@ body {
 /* Small tablets (768px to 991px) */
 @media (min-width: 768px) and (max-width: 991px) {
     #root-directory h1 {
-        font-size: 50px;
+        font-size: 100px;
     }
     
     #root-directory p {
-        font-size: 22px;
+        font-size: 50px;
     }
     
     #root-directory nav a {
         padding: 14px 25px;
-        font-size: 20px;
+        margin-top: 50px;
+        font-size: 50px;
     }
 }
-
 /* Mobile landscape / small tablets (576px to 767px) */
 @media (min-width: 576px) and (max-width: 767px) {
     #root-directory h1 {
-        font-size: 45px;
+        font-size: 45px;  /* Changed from 100px */
     }
     
     #root-directory p {
-        font-size: 20px;
+        font-size: 20px;  /* Changed from 40px */
     }
     
     #root-directory nav a {
-        padding: 12px 20px;
-        font-size: 18px;
+        padding: 12px 20px;  /* Changed from 30px 45px */
+        font-size: 18px;  /* Changed from 30px */
     }
 }
 
 /* Mobile portrait (up to 575px) */
 @media (max-width: 575px) {
     #root-directory h1 {
-        font-size: 40px;
+        font-size: 32px;  /* Changed from 60px */
     }
     
     #root-directory p {
-        font-size: 18px;
+        font-size: 18px;  /* Changed from 30px */
     }
     
     #root-directory nav a {
-        padding: 12px 20px;
-        font-size: 16px;
+        padding: 12px 20px;  /* Changed from 30px 45px */
+        font-size: 16px;  /* Changed from 25px */
     }
 }
 
 /* Extra small phones (up to 375px) */
 @media (max-width: 375px) {
     #root-directory h1 {
-        font-size: 32px;
+        font-size: 28px;  /* Changed from 100px */
     }
     
     #root-directory p {
-        font-size: 16px;
+        font-size: 16px;  /* Changed from 40px */
     }
     
     #root-directory nav a {
-        padding: 10px 15px;
-        font-size: 14px;
+        padding: 10px 15px;  /* Changed from 30px 45px */
+        font-size: 14px;  /* Changed from 40px */
     }
 }
 </style>
 
+
 <section id="root-directory">
-    <div class="root-directory">
+    <div class="content-container">
       <h1>Welcome to Cameron's Link's!</h1>
       <p>Use the navigation links below to explore different websites.</p>
       <nav>
@@ -192,4 +193,11 @@ body {
       </nav>
     </div>
   </section>
+
+<script>
+    window.addEventListener('resize', function() {
+        console.log('Screen width:', window.innerWidth);
+    });
+    console.log('Current width:', window.innerWidth);
+</script>
   
