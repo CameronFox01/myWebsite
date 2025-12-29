@@ -2,86 +2,68 @@
 body {
     margin: 0;
     padding: 0;
+    background: linear-gradient(135deg, #1e3c72 0%, #3567be 100%);
 }
+
 #root-directory {
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 50px 20px;
-    background-color: #4a4a4a;
+    background: none;
 }
 
 #root-directory .content-container {
-    max-width: 800px;
+    max-width: 600px;
     text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border-radius: 30px;
+    padding: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+
 }
 
 #root-directory h1 {
-    text-align: center;
-    font-size: 40px;
+    font-size: 48px;
     margin-bottom: 20px;
     color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 #root-directory p {
-    text-align: center;
-    font-size: 25px;
-    margin-bottom: 30px;
-    color: #f4f4f4;
-}
-
-#root-directory nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    align-items: center;
-}
-
-#root-directory nav li {
-    width: 100%;
-    max-width: 400px;
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 #root-directory nav a {
-    text-align: center;
     display: block;
-    padding: 15px 30px;
-    background: #3c3c3c;
+    padding: 18px 30px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
     color: #ffffff;
     text-decoration: none;
-    border-radius: 10px;
-    border: 2px solid #666;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
     font-size: 1.1rem;
     font-weight: bold;
     transition: all 0.3s ease;
 }
 
 #root-directory nav a:hover {
-    background: #4a4a4a;
-    border-color: #99ccff;
+    background: rgba(255, 255, 255, 0.3);
     transform: translateY(-3px);
-    box-shadow: 0 4px 12px rgba(0, 202, 237, 0.5);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
-/* Extra large screens (large desktops, 1920px and up) */
-@media (min-width: 1920px) {
-    #root-directory h1 {
-        font-size: 70px;
-    }
-    
-    #root-directory p {
-        font-size: 32px;
-    }
-    
-    #root-directory nav a {
-        padding: 20px 40px;
-        font-size: 28px;
-    }
-}
+#root-directory ul {
+    list-style-type: none;
 
+}
 /* Large screens (desktops, 1200px to 1919px) */
 @media (min-width: 1200px) and (max-width: 1919px) {
     #root-directory h1 {
