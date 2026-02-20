@@ -874,3 +874,78 @@ list-style-type: circle; /* makes subpoints different bullets */
 .contact-form-side form {
     width: 100%;
 }
+
+/* Container for expanded content */
+.work-expanded-content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out, padding 0.3s ease-out;
+    padding: 0;
+}
+
+.work-card.expanded .work-expanded-content {
+    max-height: 600px;
+    opacity: 1;
+    padding-top: 20px;
+}
+
+/* Sub-position styling */
+.sub-position {
+    margin-bottom: 25px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    /*border-left: 3px solid #99ccff;*/
+}
+
+.sub-position:last-child {
+    margin-bottom: 0;
+}
+
+.sub-position h4 {
+    margin: 0 0 5px 0;
+    font-size: 1.1rem;
+    color: #fbfbfb;
+}
+
+.sub-dates {
+    color: #ffffff;
+    margin: 0 0 10px 0;
+    font-size: 0.85rem;
+}
+
+.sub-position ul {
+    margin: 10px 0 0 0;
+    padding-left: 20px;
+    list-style-position: outside;
+}
+
+.sub-position li {
+    margin-bottom: 6px;
+    line-height: 1.4;
+    text-align: left;
+}
+
+/* Expanded content base */
+.work-expanded-content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out, padding 0.3s ease-out;
+    padding: 0;
+}
+
+/* Show on hover OR when expanded class is added */
+.work-card:hover .work-expanded-content,
+.work-card.expanded .work-expanded-content {
+    max-height: 600px;
+    opacity: 1;
+    padding-top: 20px;
+}
+
+/* Card hover effects */
+.work-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 16px rgba(0, 202, 237, 0.851);
+}
