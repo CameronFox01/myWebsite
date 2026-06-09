@@ -21,6 +21,96 @@ body::before {
     z-index: 0;
 }
 
+.published-app-section{
+    margin:80px 0;
+}
+
+.app-showcase{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:60px;
+
+    padding:40px;
+
+    border-radius:30px;
+
+    background:
+    rgba(255,255,255,.05);
+
+    backdrop-filter:blur(12px);
+
+}
+
+.app-image{
+
+    width:220px;
+
+    border-radius:30px;
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.3);
+
+}
+
+.app-info{
+
+    flex:1;
+
+}
+
+.app-info h3{
+
+    font-size:42px;
+
+    margin-bottom:15px;
+
+}
+
+.app-info p{
+
+    line-height:1.7;
+
+    opacity:.9;
+
+    max-width:700px;
+
+}
+
+.app-button{
+
+    display:inline-block;
+
+    margin-top:25px;
+
+    padding:14px 26px;
+
+    border-radius:14px;
+
+    text-decoration:none;
+
+    background:#2563EB;
+
+    color:white;
+
+    font-weight:bold;
+
+}
+
+@media (max-width:900px){
+
+    .app-showcase{
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+}
+
 .header-container {
     width: 100%;
     position: relative;
@@ -282,7 +372,7 @@ list-style-type: circle; /* makes subpoints different bullets */
     text-align: left;
 }
 
-.fieldset-style input[type="text"] {
+.fieldset-style input[type="text"], input[type="email"] {
     width: 100%;
     padding: 12px;
     font-size: 16px;

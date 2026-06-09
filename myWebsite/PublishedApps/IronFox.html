@@ -1,0 +1,764 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>IronFox</title>
+
+<style>
+
+    .faq-item {
+  background: rgba(255,255,255,.08);
+  backdrop-filter: blur(12px);
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,.12);
+  overflow: hidden;
+  transition: background 0.2s;
+}
+.faq-item:hover {
+  background: rgba(255,255,255,.12);
+}
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  color: white;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 24px 28px;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+.faq-icon {
+  font-size: 22px;
+  font-weight: 300;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+  opacity: 0.7;
+}
+.faq-item.open .faq-icon {
+  transform: rotate(45deg);
+}
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.3s ease;
+  padding: 0 28px;
+  font-size: 16px;
+  line-height: 1.7;
+  opacity: 0.85;
+}
+.faq-item.open .faq-answer {
+  max-height: 300px;
+  padding: 0 28px 24px;
+}
+
+body{
+
+margin:0;
+
+font-family:Arial,sans-serif;
+
+background:
+linear-gradient(
+180deg,
+#154dbc,
+#0c82e9,
+#618be5
+);
+
+color:white;
+
+}
+
+.container{
+
+width:90%;
+
+max-width:1200px;
+
+margin:auto;
+
+}
+
+.hero{
+
+padding:100px 0 60px 0;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+gap:50px;
+
+}
+
+.hero-text h1{
+
+font-size:64px;
+
+margin-bottom:20px;
+
+}
+
+.hero-text p{
+
+font-size:22px;
+
+opacity:.85;
+
+max-width:550px;
+
+}
+
+.buttons{
+
+margin-top:30px;
+
+display:flex;
+
+gap:15px;
+
+}
+
+.btn{
+
+padding:16px 28px;
+
+border-radius:14px;
+
+text-decoration:none;
+
+font-weight:bold;
+
+}
+
+.primary{
+
+background:#2563EB;
+
+color:white;
+
+}
+
+.secondary{
+
+border:1px solid rgba(255,255,255,.3);
+
+color:white;
+
+}
+
+.phone{
+
+width:320px;
+
+border-radius:40px;
+
+box-shadow:
+0 20px 60px rgba(0,0,0,.4);
+
+}
+
+.section{
+
+padding:100px 0;
+
+}
+
+.features{
+
+display:grid;
+
+grid-template-columns:
+repeat(
+auto-fit,
+minmax(240px,1fr)
+);
+
+gap:20px;
+
+}
+
+.card{
+
+background:
+rgba(255,255,255,.08);
+
+backdrop-filter:blur(12px);
+
+padding:30px;
+
+border-radius:24px;
+
+}
+
+.screens{
+
+display:flex;
+
+gap:25px;
+
+overflow:auto;
+
+padding-top:30px;
+
+}
+
+.screens img{
+
+width:240px;
+
+border-radius:30px;
+
+}
+
+.cta{
+
+text-align:center;
+
+padding:120px 0;
+
+}
+
+footer{
+
+padding:40px;
+
+text-align:center;
+
+opacity:.6;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<section class="hero">
+
+<div class="hero-text">
+
+<h1>
+
+Track Workouts.<br>
+
+Build Habits.<br>
+
+Reach Goals.
+
+</h1>
+
+<p>
+
+IronFox helps you plan workouts, track progress, set goals, and stay consistent.
+
+</p>
+
+<div class="buttons">
+    <a class="btn primary" href="#">
+        Download App
+    </a>
+
+    <a class="btn secondary" href="http://cameronfox.me" target="_blank" rel="noopener noreferrer">
+        My Website
+    </a>
+</div>
+
+</div>
+
+<img
+class="phone"
+src="../images/AppImages/IronFox/LightModeIronFox.png"
+>
+
+</section>
+<section
+class="section"
+id="learn"
+>
+
+<h1>
+
+Why IronFox?
+
+</h1>
+
+<div class="features">
+
+<div class="card">
+
+<h2>
+
+Built for Consistency
+
+</h2>
+
+<p>
+
+Track workouts, body weight,
+and progress all in one place
+without complicated setup.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>
+
+Stay Motivated
+
+</h2>
+
+<p>
+
+Set goals, monitor milestones,
+and keep yourself accountable
+with reminders and planning.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>
+
+See Your Progress
+
+</h2>
+
+<p>
+
+Compare progress photos,
+track strength gains,
+and visualize improvement.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>
+
+Designed for Simplicity
+
+</h2>
+
+<p>
+
+No accounts required. Your data remains private and under your control.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<section
+class="section"
+id="features"
+>
+<h2>
+
+App Screenshots
+
+</h2>
+
+<div class="screens">
+
+<img src="../images/AppImages/IronFox/HomeView.png">
+
+<img src="../images/AppImages/IronFox/CalendarView.png">
+
+<img src="../images/AppImages/IronFox/ImportView.png">
+
+<img src="../images/AppImages/IronFox/PhotoView.png">
+
+</div>
+
+</section>
+
+<h2>
+
+Features
+
+</h2>
+
+<div class="features">
+
+<div class="card">
+
+<h3>
+
+Workout Tracking
+
+</h3>
+
+<p>
+
+Track exercises, sets, reps, weight, and progress.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+Goal Setting
+
+</h3>
+
+<p>
+
+Create targets and monitor achievements.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+Progress Photos
+
+</h3>
+
+<p>
+
+Compare photos side-by-side, Track physical progress visually, Save photo to app or device.
+
+</p>
+
+</div>
+
+<div class="card">
+
+    <h3>
+
+    Workout Planning
+
+    </h3>
+
+    <p>
+
+    Schedule routines
+    and reminders.
+
+    </p>
+
+</div>
+
+<div class="card">
+    <h3>
+        Progress Tracking
+    </h3>
+    <p>
+        Monitor body weight and workout history.
+    </p>
+</div>
+
+<div class="card">
+    <h3>
+        Built-In Timers
+    </h3>
+    <p>
+        Stopwatch and timers during workouts. 
+        
+    </p>
+</div>
+
+<div class="card">
+    <h3>
+        Exercise Library 
+    </h3>
+    <p>
+        Track workouts across 12 different categories and over 500+ workouts.
+    </p>
+</div>
+
+<div class="card">
+    <h3>
+        Private By Design
+    </h3>
+    <p>
+        No accounts. Data stays on device. 
+    </p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="permissions">
+
+<h2>
+
+Permissions & Privacy
+
+</h2>
+
+<p>
+
+IronFox only requests permissions that are used to support features you choose to use.
+
+</p>
+
+<div class="features">
+
+<div class="card">
+
+<h3>
+
+📷 Camera Access
+
+</h3>
+
+<p>
+
+Used to take progress photos for comparisons and tracking.
+
+Photos can be stored inside the app or optionally saved to your device photo library.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+🖼️ Photo Library Access
+
+</h3>
+
+<p>
+
+Used to import existing photos for progress comparisons and optionally save photos created within IronFox.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+❤️ Health Data Access
+
+</h3>
+
+<p>
+
+Used to read HealthKit information including step count, distance traveled, flights climbed, and calories to help track activity progress.
+
+IronFox only accesses data you explicitly allow.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>
+
+🔔 Notifications
+
+</h3>
+
+<p>
+
+Used for workout reminders, milestone notifications, goal reminders, and scheduled workout alerts.
+
+Notifications can be changed or disabled anytime.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FAQ Section -->
+<section class="section" id="faq">
+  <h2>Frequently Asked Questions</h2>
+  <p style="opacity:.7; font-size:18px; margin-bottom:48px;">Answers to common questions about IronFox.</p>
+  <div id="faq-list" style="display:flex; flex-direction:column; gap:12px;"></div>
+</section>
+
+<section class="section" id="contact-me">
+  <h2>Contact Support</h2>
+  <p style="opacity:.7; font-size:18px; margin-bottom:48px;">Have a question or issue? We'd love to hear from you.</p>
+
+  <div style="max-width:600px; margin:auto;">
+    <div class="card" style="border-radius:28px; padding:40px;">
+
+      <form action="contact" method="POST" data-netlify="true"
+            style="display:flex; flex-direction:column; gap:20px;">
+
+        <div style="display:flex; flex-direction:column; gap:6px;">
+          <label style="font-size:14px; font-weight:bold; opacity:.7; letter-spacing:.05em;">
+            NAME
+          </label>
+          <input type="text" name="name" required
+            style="background:rgba(255,255,255,.1);
+                   border:1px solid rgba(255,255,255,.2);
+                   border-radius:12px;
+                   padding:14px 16px;
+                   color:white;
+                   font-size:16px;
+                   font-family:Arial,sans-serif;
+                   outline:none;
+                   transition:border .2s;"
+            onfocus="this.style.borderColor='rgba(255,255,255,.6)'"
+            onblur="this.style.borderColor='rgba(255,255,255,.2)'"
+          />
+        </div>
+
+        <div style="display:flex; flex-direction:column; gap:6px;">
+          <label style="font-size:14px; font-weight:bold; opacity:.7; letter-spacing:.05em;">
+            EMAIL
+          </label>
+          <input type="email" name="email" required
+            style="background:rgba(255,255,255,.1);
+                   border:1px solid rgba(255,255,255,.2);
+                   border-radius:12px;
+                   padding:14px 16px;
+                   color:white;
+                   font-size:16px;
+                   font-family:Arial,sans-serif;
+                   outline:none;
+                   transition:border .2s;"
+            onfocus="this.style.borderColor='rgba(255,255,255,.6)'"
+            onblur="this.style.borderColor='rgba(255,255,255,.2)'"
+          />
+        </div>
+
+        <div style="display:flex; flex-direction:column; gap:6px;">
+          <label style="font-size:14px; font-weight:bold; opacity:.7; letter-spacing:.05em;">
+            MESSAGE
+          </label>
+          <textarea name="comments" rows="6" required
+            style="background:rgba(255,255,255,.1);
+                   border:1px solid rgba(255,255,255,.2);
+                   border-radius:12px;
+                   padding:14px 16px;
+                   color:white;
+                   font-size:16px;
+                   font-family:Arial,sans-serif;
+                   outline:none;
+                   resize:vertical;
+                   transition:border .2s;"
+            onfocus="this.style.borderColor='rgba(255,255,255,.6)'"
+            onblur="this.style.borderColor='rgba(255,255,255,.2)'"
+          ></textarea>
+        </div>
+
+        <button type="submit"
+          style="background:#2563EB;
+                 color:white;
+                 border:none;
+                 border-radius:14px;
+                 padding:16px 28px;
+                 font-size:17px;
+                 font-weight:bold;
+                 font-family:Arial,sans-serif;
+                 cursor:pointer;
+                 transition:opacity .2s;"
+          onmouseover="this.style.opacity='.85'"
+          onmouseout="this.style.opacity='1'"
+        >
+          Send Message
+        </button>
+
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>Ready to Start?</h2>
+  <p>Download IronFox today.</p>
+  <br>
+  <a class="btn primary" href="#">Download App</a>
+</section>
+
+<footer>
+  © 2026 IronFox
+  <br>
+  IronFox is intended for fitness tracking and informational purposes and is not medical advice.
+  <br>
+  <a href="Privacy.html"> Go to Privacy Page</a>
+</footer>
+
+</div><!-- end .container -->
+
+<script>
+const faqs = [
+  { q: "Is IronFox free to use?", a: "IronFox is a one-time purchase on the App Store. Pay once, own it forever. No subscriptions, no in-app purchases, and no hidden fees. Every future update is included at no extra cost." },
+  { q: "Do I need to create an account?", a: "No account needed. IronFox is private by design — all your data stays on your device. No sign-up, no email, no cloud required." },
+  { q: "What types of workouts can I track?", a: "IronFox supports over 500 exercises across 12 categories including Push, Pull, Legs, Glutes, Biceps, Triceps, Abs, Bodyweight, Distance Cardio, Time Cardio, Sports, and Stretch. You can also add your own custom exercises." },
+  { q: "Can I set and track fitness goals?", a: "Yes. You can set goals for individual exercises (target weight, reps, or distance), a body weight target, and a weekly workout frequency goal. IronFox notifies you when you hit them." },
+  { q: "What are milestones?", a: "Milestones are automatic achievements unlocked as you progress, like logging your 10th or 100th workout, or working out on 30 different days. They're a way to celebrate consistency over time." },
+  { q: "How does the workout calendar work?", a: "The calendar shows a heatmap of your workout activity by day. You can tap any day to see what you logged, add a missed workout to a past date, or view planned workouts for that day of the week." },
+  { q: "Can I plan my workouts in advance?", a: "Yes. The Schedule feature lets you set a workout plan for each day of the week, complete with a title and specific exercises. You can also set a reminder notification for each day." },
+  { q: "Does IronFox work with Apple Health?", a: "Yes. IronFox reads your step count, distance, and active calories from Apple Health so you can see your daily activity alongside your workout data on the home screen." },
+  { q: "Is there a widget?", a: "Yes. IronFox includes a home screen widget in small, medium, and large sizes. It shows your workout heatmap, current streak, and today's planned workouts at a glance." },
+  { q: "What happens if I delete the app?", a: "IronFox stores data locally on your device. Deleting the app may remove locally stored data unless it exists in backups or exported copies." }
+];
+
+const list = document.getElementById('faq-list');
+faqs.forEach((faq) => {
+  const item = document.createElement('div');
+  item.className = 'faq-item';
+  item.innerHTML = `
+    <button class="faq-question" aria-expanded="false">
+      <span>${faq.q}</span>
+      <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-answer">${faq.a}</div>
+  `;
+  const btn = item.querySelector('.faq-question');
+  btn.addEventListener('click', () => {
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(el => {
+      el.classList.remove('open');
+      el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+    });
+    if (!isOpen) {
+      item.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  });
+  list.appendChild(item);
+});
+</script>
+
+</body>
+</html>
