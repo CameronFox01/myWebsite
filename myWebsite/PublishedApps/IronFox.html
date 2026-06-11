@@ -1,36 +1,184 @@
 
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>IronFox</title>
-
 <style>
 
-    .faq-item {
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(180deg, #154dbc, #0c82e9, #618be5);
+  color: white;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ── NAV ── */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 5%;
+  position: sticky;
+  top: 0;
+  background: rgba(21,77,188,.85);
+  backdrop-filter: blur(12px);
+  z-index: 100;
+  border-bottom: 1px solid rgba(255,255,255,.1);
+}
+.nav-logo { font-size: 20px; font-weight: bold; }
+.nav-links { display: flex; gap: 24px; }
+.nav-links a {
+  color: rgba(255,255,255,.8);
+  text-decoration: none;
+  font-size: 15px;
+  transition: color .2s;
+}
+.nav-links a:hover { color: white; }
+.nav-cta {
+  background: #2563EB;
+  color: white !important;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+/* ── HERO ── */
+.hero {
+  padding: 80px 0 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+.hero-text h1 {
+  font-size: clamp(36px, 6vw, 64px);
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+.hero-text p {
+  font-size: clamp(16px, 2.5vw, 22px);
+  opacity: .85;
+  max-width: 520px;
+  line-height: 1.6;
+}
+.buttons {
+  margin-top: 30px;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+.btn {
+  padding: 14px 24px;
+  border-radius: 14px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 15px;
+  display: inline-block;
+}
+.primary { background: #2563EB; color: white; }
+.secondary { border: 1px solid rgba(255,255,255,.3); color: white; }
+.phone {
+  width: min(320px, 40vw);
+  border-radius: 40px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.4);
+  flex-shrink: 0;
+}
+
+/* ── SECTIONS ── */
+.section { padding: 80px 0; }
+
+.section-label {
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: .1em;
+  opacity: .6;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+h1, h2 { margin-bottom: 16px; }
+h2 { font-size: clamp(24px, 4vw, 36px); }
+.section > p { opacity: .7; font-size: 17px; margin-bottom: 40px; line-height: 1.6; }
+
+/* ── FEATURE GRID ── */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+.card {
+  background: rgba(255,255,255,.08);
+  backdrop-filter: blur(12px);
+  padding: 28px;
+  border-radius: 24px;
+  border: 1px solid rgba(255,255,255,.1);
+}
+.card h2, .card h3 { margin-bottom: 10px; }
+.card p { opacity: .8; line-height: 1.65; font-size: 15px; }
+
+/* ── SCREENSHOTS ── */
+.screens {
+  display: flex;
+  gap: 10px;
+  overflow-x: scroll;
+  padding: 20px 0 10px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;                          /* ✅ show on Firefox */
+  scrollbar-color: rgba(255,255,255,.4) transparent;  /* ✅ Firefox color */
+}
+
+.screens img {
+  width: 300px;
+  flex-shrink: 0;
+  border-radius: 28px;
+  box-shadow: 0 12px 40px rgba(0,0,0,.3);
+}
+
+/* ✅ Chrome/Safari scrollbar */
+.screens::-webkit-scrollbar {
+  height: 6px;
+}
+.screens::-webkit-scrollbar-track {
+  background: rgba(255,255,255,.1);
+  border-radius: 10px;
+}
+.screens::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,.4);
+  border-radius: 10px;
+}
+.screens::-webkit-scrollbar-thumb:hover {
+  background: rgba(255,255,255,.7);
+}
+
+/* ── FAQ ── */
+#faq-list { display: flex; flex-direction: column; gap: 12px; }
+.faq-item {
   background: rgba(255,255,255,.08);
   backdrop-filter: blur(12px);
   border-radius: 18px;
   border: 1px solid rgba(255,255,255,.12);
   overflow: hidden;
-  transition: background 0.2s;
+  transition: background .2s;
 }
-.faq-item:hover {
-  background: rgba(255,255,255,.12);
-}
+.faq-item:hover { background: rgba(255,255,255,.12); }
 .faq-question {
   width: 100%;
   background: none;
   border: none;
   color: white;
   font-family: Arial, sans-serif;
-  font-size: 18px;
+  font-size: clamp(15px, 2vw, 18px);
   font-weight: bold;
-  padding: 24px 28px;
+  padding: 20px 24px;
   text-align: left;
   cursor: pointer;
   display: flex;
@@ -42,686 +190,304 @@
   font-size: 22px;
   font-weight: 300;
   flex-shrink: 0;
-  transition: transform 0.3s ease;
-  opacity: 0.7;
+  transition: transform .3s ease;
+  opacity: .7;
 }
-.faq-item.open .faq-icon {
-  transform: rotate(45deg);
-}
+.faq-item.open .faq-icon { transform: rotate(45deg); }
 .faq-answer {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.35s ease, padding 0.3s ease;
-  padding: 0 28px;
-  font-size: 16px;
+  transition: max-height .35s ease, padding .3s ease;
+  padding: 0 24px;
+  font-size: 15px;
   line-height: 1.7;
-  opacity: 0.85;
+  opacity: .85;
 }
-.faq-item.open .faq-answer {
-  max-height: 300px;
-  padding: 0 28px 24px;
+.faq-item.open .faq-answer { max-height: 400px; padding: 0 24px 22px; }
+
+/* ── CONTACT ── */
+.contact-form {
+  max-width: 600px;
+  margin: auto;
 }
-
-body{
-
-margin:0;
-
-font-family:Arial,sans-serif;
-
-background:
-linear-gradient(
-180deg,
-#154dbc,
-#0c82e9,
-#618be5
-);
-
-color:white;
-
+.contact-form .card { padding: 36px; border-radius: 28px; }
+.form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 18px; }
+.form-label {
+  font-size: 13px;
+  font-weight: bold;
+  opacity: .7;
+  letter-spacing: .05em;
+  text-transform: uppercase;
 }
-
-.container{
-
-width:90%;
-
-max-width:1200px;
-
-margin:auto;
-
+.form-input {
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 12px;
+  padding: 14px 16px;
+  color: white;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  outline: none;
+  transition: border .2s;
+  width: 100%;
 }
-
-.hero{
-
-padding:100px 0 60px 0;
-
-display:flex;
-
-align-items:center;
-
-justify-content:space-between;
-
-gap:50px;
-
+.form-input:focus { border-color: rgba(255,255,255,.6); }
+textarea.form-input { resize: vertical; min-height: 140px; }
+.form-submit {
+  background: #2563EB;
+  color: white;
+  border: none;
+  border-radius: 14px;
+  padding: 16px 28px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  cursor: pointer;
+  transition: opacity .2s;
+  width: 100%;
 }
+.form-submit:hover { opacity: .85; }
 
-.hero-text h1{
+/* ── CTA ── */
+.cta { text-align: center; padding: 100px 0; }
+.cta h2 { font-size: clamp(28px, 5vw, 48px); margin-bottom: 16px; }
+.cta p { font-size: 18px; opacity: .7; margin-bottom: 32px; }
 
-font-size:64px;
-
-margin-bottom:20px;
-
+/* ── FOOTER ── */
+footer {
+  padding: 40px 5%;
+  text-align: center;
+  opacity: .65;
+  font-size: 14px;
+  line-height: 1.8;
+  border-top: 1px solid rgba(255,255,255,.1);
 }
+footer a { color: rgba(255,255,255,.7); }
+footer a:hover { color: white; }
 
-.hero-text p{
+/* ── MOBILE ── */
+@media (max-width: 768px) {
 
-font-size:22px;
+  nav { padding: 16px 5%; }
+  .nav-links { display: none; }
 
-opacity:.85;
+  .hero {
+    flex-direction: column;
+    padding: 50px 0 40px;
+    text-align: center;
+    gap: 36px;
+  }
+  .hero-text p { max-width: 100%; }
+  .buttons { justify-content: center; }
+  .phone { width: min(260px, 70vw); }
 
-max-width:550px;
+  .section { padding: 60px 0; }
 
-}
+  .features {
+    grid-template-columns: 1fr;
+  }
 
-.buttons{
+  .screens img { width: 160px; border-radius: 22px; }
 
-margin-top:30px;
+  .contact-form .card { padding: 24px; }
 
-display:flex;
+  .faq-question { padding: 16px 20px; }
+  .faq-answer { padding: 0 20px; }
+  .faq-item.open .faq-answer { padding: 0 20px 18px; }
 
-gap:15px;
-
-}
-
-.btn{
-
-padding:16px 28px;
-
-border-radius:14px;
-
-text-decoration:none;
-
-font-weight:bold;
-
-}
-
-.primary{
-
-background:#2563EB;
-
-color:white;
-
-}
-
-.secondary{
-
-border:1px solid rgba(255,255,255,.3);
-
-color:white;
-
+  .cta { padding: 60px 0; }
 }
 
-.phone{
-
-width:320px;
-
-border-radius:40px;
-
-box-shadow:
-0 20px 60px rgba(0,0,0,.4);
-
+@media (max-width: 480px) {
+  .hero-text h1 { font-size: 32px; }
+  .btn { padding: 12px 20px; font-size: 14px; }
+  .card { padding: 20px; }
 }
 
-.section{
-
-padding:100px 0;
-
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 24px;
+    font-weight: bold;
 }
 
-.features{
-
-display:grid;
-
-grid-template-columns:
-repeat(
-auto-fit,
-minmax(240px,1fr)
-);
-
-gap:20px;
-
-}
-
-.card{
-
-background:
-rgba(255,255,255,.08);
-
-backdrop-filter:blur(12px);
-
-padding:30px;
-
-border-radius:24px;
-
-}
-
-.screens{
-
-display:flex;
-
-gap:25px;
-
-overflow:auto;
-
-padding-top:30px;
-
-}
-
-.screens img{
-
-width:240px;
-
-border-radius:30px;
-
-}
-
-.cta{
-
-text-align:center;
-
-padding:120px 0;
-
-}
-
-footer{
-
-padding:40px;
-
-text-align:center;
-
-opacity:.6;
-
+.nav-logo img {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px; /* matches app icon style */
+    object-fit: cover;
 }
 
 </style>
-
 </head>
-
 <body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <img src="../images/AppImages/IronFox/LightModeIronFox.png" alt="IronFox Logo">
+    <span>IronFox</span>
+  </div>
+  <div class="nav-links">
+    <a href="#learn">Why IronFox</a>
+    <a href="#features">Features</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact-me">Support</a>
+    <a href="https://testflight.apple.com/join/gScB1b6b" class="nav-cta">Download the Beta</a>
+  </div>
+</nav>
 
 <div class="container">
 
+<!-- HERO -->
 <section class="hero">
-
-<div class="hero-text">
-
-<h1>
-
-Track Workouts.<br>
-
-Build Habits.<br>
-
-Reach Goals.
-
-</h1>
-
-<p>
-
-IronFox helps you plan workouts, track progress, set goals, and stay consistent.
-
-</p>
-
-<div class="buttons">
-    <a class="btn primary" href="#">
-        Download App
-    </a>
-
-    <a class="btn secondary" href="http://cameronfox.me" target="_blank" rel="noopener noreferrer">
-        My Website
-    </a>
-</div>
-
-</div>
-
-<img
-class="phone"
-src="../images/AppImages/IronFox/LightModeIronFox.png"
->
-
-</section>
-<section
-class="section"
-id="learn"
->
-
-<h1>
-
-Why IronFox?
-
-</h1>
-
-<div class="features">
-
-<div class="card">
-
-<h2>
-
-Built for Consistency
-
-</h2>
-
-<p>
-
-Track workouts, body weight,
-and progress all in one place
-without complicated setup.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<h2>
-
-Stay Motivated
-
-</h2>
-
-<p>
-
-Set goals, monitor milestones,
-and keep yourself accountable
-with reminders and planning.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<h2>
-
-See Your Progress
-
-</h2>
-
-<p>
-
-Compare progress photos,
-track strength gains,
-and visualize improvement.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<h2>
-
-Designed for Simplicity
-
-</h2>
-
-<p>
-
-No accounts required. Your data remains private and under your control.
-
-</p>
-
-</div>
-
-</div>
-
+  <div class="hero-text">
+    <h1>Track Workouts.<br>Build Habits.<br>Reach Goals.</h1>
+    <p>IronFox helps you plan workouts, track progress, set goals, and stay consistent.</p>
+    <div class="buttons">
+      <a class="btn primary" href="https://testflight.apple.com/join/gScB1b6b">Download the Beta Here</a> <!-- Download on App Store-->
+      <a class="btn secondary" href="http://cameronfox.me" target="_blank" rel="noopener noreferrer">My Website</a>
+    </div>
+  </div>
+  <img class="phone" src="../images/AppImages/IronFox/LightModeIronFox.png" alt="IronFox app screenshot">
 </section>
 
-
-
-<section
-class="section"
-id="features"
->
-<h2>
-
-App Screenshots
-
-</h2>
-
-<div class="screens">
-
-<img src="../images/AppImages/IronFox/HomeView.png">
-
-<img src="../images/AppImages/IronFox/CalendarView.png">
-
-<img src="../images/AppImages/IronFox/ImportView.png">
-
-<img src="../images/AppImages/IronFox/PhotoView.png">
-
-</div>
-
+<!-- WHY -->
+<section class="section" id="learn">
+  <div class="section-label">Why IronFox</div>
+  <h2>Built Different</h2>
+  <div class="features">
+    <div class="card">
+      <h3>Built for Consistency</h3>
+      <p>Track workouts, body weight, and progress all in one place without complicated setup.</p>
+    </div>
+    <div class="card">
+      <h3>Stay Motivated</h3>
+      <p>Set goals, monitor milestones, and keep yourself accountable with reminders and planning.</p>
+    </div>
+    <div class="card">
+      <h3>See Your Progress</h3>
+      <p>Compare progress photos, track strength gains, and visualize improvement over time.</p>
+    </div>
+    <div class="card">
+      <h3>Designed for Simplicity</h3>
+      <p>No accounts required. Your data remains private and under your control.</p>
+    </div>
+  </div>
 </section>
 
-<h2>
-
-Features
-
-</h2>
-
-<div class="features">
-
-<div class="card">
-
-<h3>
-
-Workout Tracking
-
-</h3>
-
-<p>
-
-Track exercises, sets, reps, weight, and progress.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>
-
-Goal Setting
-
-</h3>
-
-<p>
-
-Create targets and monitor achievements.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>
-
-Progress Photos
-
-</h3>
-
-<p>
-
-Compare photos side-by-side, Track physical progress visually, Save photo to app or device.
-
-</p>
-
-</div>
-
-<div class="card">
-
-    <h3>
-
-    Workout Planning
-
-    </h3>
-
-    <p>
-
-    Schedule routines
-    and reminders.
-
-    </p>
-
-</div>
-
-<div class="card">
-    <h3>
-        Progress Tracking
-    </h3>
-    <p>
-        Monitor body weight and workout history.
-    </p>
-</div>
-
-<div class="card">
-    <h3>
-        Built-In Timers
-    </h3>
-    <p>
-        Stopwatch and timers during workouts. 
-        
-    </p>
-</div>
-
-<div class="card">
-    <h3>
-        Exercise Library 
-    </h3>
-    <p>
-        Track workouts across 12 different categories and over 500+ workouts.
-    </p>
-</div>
-
-<div class="card">
-    <h3>
-        Private By Design
-    </h3>
-    <p>
-        No accounts. Data stays on device. 
-    </p>
-</div>
-
-</div>
-
+<!-- SCREENSHOTS -->
+<section class="section" id="screenshots">
+  <div class="section-label">App Screenshots</div>
+  <h2>See It In Action</h2>
+  <div class="screens">
+    <img src="../images/AppImages/IronFox/AppleiPhoneScreenshot1.png" alt="Home">
+    <img src="../images/AppImages/IronFox/AppleiPhoneScreenshot2.png" alt="Chart1">
+    <img src="../images/AppImages/IronFox/AppleiPhoneScreenshot3.png" alt="Chart2">
+    <img src="../images/AppImages/IronFox/AppleiPhoneScreenshot4.png" alt="Import">
+    <img src="../images/AppImages/IronFox/AppleiPhoneScreenshot5.png" alt ="HeatMap">
+    <img src="../images/AppImages/IronFox/AppleiPhoneScreenshot6.png" alt ="Goal">
+  </div>
 </section>
 
+<!-- FEATURES -->
+<section class="section" id="features">
+  <div class="section-label">Features</div>
+  <h2>Everything You Need</h2>
+  <div class="features">
+    <div class="card"><h3>Workout Tracking</h3><p>Track exercises, sets, reps, weight, and progress charts for every exercise.</p></div>
+    <div class="card"><h3>Goal Setting</h3><p>Create targets and monitor achievements for any exercise or body weight goal.</p></div>
+    <div class="card"><h3>Progress Photos</h3><p>Compare photos side-by-side, track physical progress visually, save to app or device.</p></div>
+    <div class="card"><h3>Workout Planning</h3><p>Schedule weekly routines and set reminders for each day.</p></div>
+    <div class="card"><h3>Progress Tracking</h3><p>Monitor body weight, streaks, and full workout history over time.</p></div>
+    <div class="card"><h3>Built-In Timers</h3><p>Stopwatch and rest timers right inside the app during your workouts.</p></div>
+    <div class="card"><h3>Exercise Library</h3><p>12 categories and over 500 built-in workouts, plus add your own custom exercises.</p></div>
+    <div class="card"><h3>Graphs Display</h3><p>Graphs to give you a visual representation of your growth over the years.</p></div>
+    <div class="card"><h3>Built-In Widget</h3><p>Quick glances so you see your current streaks, your growth and success quickly.</p></div>
+    <div class="card"><h3>Private By Design</h3><p>No accounts. No cloud. Your data stays on your device, always.</p></div>
+  </div>
+</section>
+
+<!-- PERMISSIONS -->
 <section class="section" id="permissions">
-
-<h2>
-
-Permissions & Privacy
-
-</h2>
-
-<p>
-
-IronFox only requests permissions that are used to support features you choose to use.
-
-</p>
-
-<div class="features">
-
-<div class="card">
-
-<h3>
-
-📷 Camera Access
-
-</h3>
-
-<p>
-
-Used to take progress photos for comparisons and tracking.
-
-Photos can be stored inside the app or optionally saved to your device photo library.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>
-
-🖼️ Photo Library Access
-
-</h3>
-
-<p>
-
-Used to import existing photos for progress comparisons and optionally save photos created within IronFox.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>
-
-❤️ Health Data Access
-
-</h3>
-
-<p>
-
-Used to read HealthKit information including step count, distance traveled, flights climbed, and calories to help track activity progress.
-
-IronFox only accesses data you explicitly allow.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>
-
-🔔 Notifications
-
-</h3>
-
-<p>
-
-Used for workout reminders, milestone notifications, goal reminders, and scheduled workout alerts.
-
-Notifications can be changed or disabled anytime.
-
-</p>
-
-</div>
-
-</div>
-
+  <div class="section-label">Permissions & Privacy</div>
+  <h2>Only What's Needed</h2>
+  <p>IronFox only requests permissions that are used to support features you choose to use.</p>
+  <div class="features">
+    <div class="card">
+      <h3>📷 Camera Access</h3>
+      <p>Used to take progress photos for comparisons and tracking. Photos can be stored inside the app or optionally saved to your device photo library.</p>
+    </div>
+    <div class="card">
+      <h3>🖼️ Photo Library Access</h3>
+      <p>Used to import existing photos for progress comparisons and optionally save photos created within IronFox.</p>
+    </div>
+    <div class="card">
+      <h3>❤️ Health Data Access</h3>
+      <p>Used to read HealthKit data including step count, distance, flights climbed, and calories. IronFox only accesses data you explicitly allow.</p>
+    </div>
+    <div class="card">
+      <h3>🔔 Notifications</h3>
+      <p>Used for workout reminders, milestone notifications, goal alerts, and scheduled workout reminders. Can be changed or disabled anytime.</p>
+    </div>
+  </div>
 </section>
 
-<!-- FAQ Section -->
+<!-- FAQ -->
 <section class="section" id="faq">
+  <div class="section-label">FAQ</div>
   <h2>Frequently Asked Questions</h2>
-  <p style="opacity:.7; font-size:18px; margin-bottom:48px;">Answers to common questions about IronFox.</p>
-  <div id="faq-list" style="display:flex; flex-direction:column; gap:12px;"></div>
+  <p>Answers to common questions about IronFox.</p>
+  <div id="faq-list"></div>
 </section>
 
+<!-- CONTACT -->
 <section class="section" id="contact-me">
+  <div class="section-label">Support</div>
   <h2>Contact Support</h2>
-  <p style="opacity:.7; font-size:18px; margin-bottom:48px;">Have a question or issue? We'd love to hear from you.</p>
-
-  <div style="max-width:600px; margin:auto;">
-    <div class="card" style="border-radius:28px; padding:40px;">
-
-      <form action="contact" method="POST" data-netlify="true"
-            style="display:flex; flex-direction:column; gap:20px;">
-
-        <div style="display:flex; flex-direction:column; gap:6px;">
-          <label style="font-size:14px; font-weight:bold; opacity:.7; letter-spacing:.05em;">
-            NAME
-          </label>
-          <input type="text" name="name" required
-            style="background:rgba(255,255,255,.1);
-                   border:1px solid rgba(255,255,255,.2);
-                   border-radius:12px;
-                   padding:14px 16px;
-                   color:white;
-                   font-size:16px;
-                   font-family:Arial,sans-serif;
-                   outline:none;
-                   transition:border .2s;"
-            onfocus="this.style.borderColor='rgba(255,255,255,.6)'"
-            onblur="this.style.borderColor='rgba(255,255,255,.2)'"
-          />
+  <p>Have a question or issue? We'd love to hear from you.</p>
+  <div class="contact-form">
+    <div class="card">
+      <form action="contact" method="POST" data-netlify="true">
+        <div class="form-group">
+          <label class="form-label">Name</label>
+          <input type="text" name="name" required class="form-input" placeholder="Your name">
         </div>
-
-        <div style="display:flex; flex-direction:column; gap:6px;">
-          <label style="font-size:14px; font-weight:bold; opacity:.7; letter-spacing:.05em;">
-            EMAIL
-          </label>
-          <input type="email" name="email" required
-            style="background:rgba(255,255,255,.1);
-                   border:1px solid rgba(255,255,255,.2);
-                   border-radius:12px;
-                   padding:14px 16px;
-                   color:white;
-                   font-size:16px;
-                   font-family:Arial,sans-serif;
-                   outline:none;
-                   transition:border .2s;"
-            onfocus="this.style.borderColor='rgba(255,255,255,.6)'"
-            onblur="this.style.borderColor='rgba(255,255,255,.2)'"
-          />
+        <div class="form-group">
+          <label class="form-label">Email</label>
+          <input type="email" name="email" required class="form-input" placeholder="your@email.com">
         </div>
-
-        <div style="display:flex; flex-direction:column; gap:6px;">
-          <label style="font-size:14px; font-weight:bold; opacity:.7; letter-spacing:.05em;">
-            MESSAGE
-          </label>
-          <textarea name="comments" rows="6" required
-            style="background:rgba(255,255,255,.1);
-                   border:1px solid rgba(255,255,255,.2);
-                   border-radius:12px;
-                   padding:14px 16px;
-                   color:white;
-                   font-size:16px;
-                   font-family:Arial,sans-serif;
-                   outline:none;
-                   resize:vertical;
-                   transition:border .2s;"
-            onfocus="this.style.borderColor='rgba(255,255,255,.6)'"
-            onblur="this.style.borderColor='rgba(255,255,255,.2)'"
-          ></textarea>
+        <div class="form-group">
+          <label class="form-label">Message</label>
+          <textarea name="comments" required class="form-input" placeholder="What can we help with?"></textarea>
         </div>
-
-        <button type="submit"
-          style="background:#2563EB;
-                 color:white;
-                 border:none;
-                 border-radius:14px;
-                 padding:16px 28px;
-                 font-size:17px;
-                 font-weight:bold;
-                 font-family:Arial,sans-serif;
-                 cursor:pointer;
-                 transition:opacity .2s;"
-          onmouseover="this.style.opacity='.85'"
-          onmouseout="this.style.opacity='1'"
-        >
-          Send Message
-        </button>
-
+        <button type="submit" class="form-submit">Send Message</button>
       </form>
     </div>
   </div>
 </section>
 
+<!-- CTA -->
 <section class="cta">
   <h2>Ready to Start?</h2>
-  <p>Download IronFox today.</p>
-  <br>
-  <a class="btn primary" href="#">Download App</a>
+  <p>One purchase. No subscriptions. Yours forever.</p>
+  <a class="btn primary" href="https://testflight.apple.com/join/gScB1b6b" style="font-size:18px; padding:18px 36px;">Download on Beta Now</a> <!--Donwload on the App Store-->
 </section>
 
-<footer>
-  © 2026 IronFox
-  <br>
-  IronFox is intended for fitness tracking and informational purposes and is not medical advice.
-  <br>
-  <a href="Privacy.html"> Go to Privacy Page</a>
-</footer>
+</div>
 
-</div><!-- end .container -->
+<footer>
+  © 2026 IronFox &nbsp;·&nbsp;
+  <a href="Privacy.html">Privacy Policy</a> &nbsp;·&nbsp;
+  <a href="mailto:cameron22401@icloud.com">cameron22401@icloud.com</a>
+  <br><br>
+  IronFox is intended for fitness tracking and informational purposes and is not medical advice.
+</footer>
 
 <script>
 const faqs = [
-  { q: "Is IronFox free to use?", a: "IronFox is a one-time purchase on the App Store. Pay once, own it forever. No subscriptions, no in-app purchases, and no hidden fees. Every future update is included at no extra cost." },
+  { q: "How much does IronFox cost?", a: "IronFox is a one-time purchase on the App Store. Pay once, own it forever. No subscriptions, no in-app purchases, and no hidden fees. Every future update is included at no extra cost." },
   { q: "Do I need to create an account?", a: "No account needed. IronFox is private by design — all your data stays on your device. No sign-up, no email, no cloud required." },
   { q: "What types of workouts can I track?", a: "IronFox supports over 500 exercises across 12 categories including Push, Pull, Legs, Glutes, Biceps, Triceps, Abs, Bodyweight, Distance Cardio, Time Cardio, Sports, and Stretch. You can also add your own custom exercises." },
   { q: "Can I set and track fitness goals?", a: "Yes. You can set goals for individual exercises (target weight, reps, or distance), a body weight target, and a weekly workout frequency goal. IronFox notifies you when you hit them." },
@@ -734,7 +500,7 @@ const faqs = [
 ];
 
 const list = document.getElementById('faq-list');
-faqs.forEach((faq) => {
+faqs.forEach(faq => {
   const item = document.createElement('div');
   item.className = 'faq-item';
   item.innerHTML = `
@@ -744,8 +510,7 @@ faqs.forEach((faq) => {
     </button>
     <div class="faq-answer">${faq.a}</div>
   `;
-  const btn = item.querySelector('.faq-question');
-  btn.addEventListener('click', () => {
+  item.querySelector('.faq-question').addEventListener('click', () => {
     const isOpen = item.classList.contains('open');
     document.querySelectorAll('.faq-item.open').forEach(el => {
       el.classList.remove('open');
@@ -753,7 +518,7 @@ faqs.forEach((faq) => {
     });
     if (!isOpen) {
       item.classList.add('open');
-      btn.setAttribute('aria-expanded', 'true');
+      item.querySelector('.faq-question').setAttribute('aria-expanded', 'true');
     }
   });
   list.appendChild(item);
