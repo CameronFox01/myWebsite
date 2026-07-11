@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Use — FoxTally</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --white:        #ffffff;
+    --paper:        #f7f7f5;
+    --ink:          #1b1b1d;
+    --ink-soft:     #4a4a4e;
+    --muted:        #6e6e73;
+    --line:         #e7e6e2;
+    --fox:          #ff5e2e;
+    --fox-dark:     #e04a1c;
+    --fox-tint:     #fff1ea;
+    --shadow-sm:    0 2px 8px rgba(20,20,22,0.05);
+    --shadow-md:    0 12px 32px rgba(20,20,22,0.07);
+    --radius-sm:    12px;
+    --radius-md:    18px;
+    --radius-lg:    28px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+    color:var(--ink);
+    background:var(--white);
+    -webkit-font-smoothing:antialiased;
+    line-height:1.6;
+  }
+  a{color:var(--fox-dark);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+
+  /* Top bar */
+  .policy-nav{
+    padding:20px 0;border-bottom:1px solid var(--line);
+    background:var(--white);
+  }
+  .policy-nav .wrap{display:flex;align-items:center;justify-content:space-between;}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:16px;}
+  .brand svg{width:26px;height:26px;}
+  .back-link{
+    display:inline-flex;align-items:center;gap:6px;
+    font-size:14px;font-weight:600;color:var(--ink-soft);
+  }
+  .back-link:hover{color:var(--fox-dark);text-decoration:none;}
+  .back-link svg{width:14px;height:14px;}
+
+  /* Header */
+  .policy-header{
+    padding:72px 0 48px;
+    background:radial-gradient(600px 260px at 50% 0%, var(--fox-tint), transparent 70%);
+  }
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:13px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;
+    color:var(--fox-dark);margin-bottom:14px;
+  }
+  .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--fox);display:inline-block;}
+  .policy-header h1{
+    font-size:clamp(32px,5vw,44px);font-weight:800;letter-spacing:-0.02em;margin-bottom:14px;
+  }
+  .policy-header p{color:var(--muted);font-size:16px;max-width:520px;}
+  .updated-badge{
+    display:inline-flex;margin-top:20px;
+    font-size:12.5px;font-weight:600;color:var(--ink-soft);
+    background:var(--paper);border:1px solid var(--line);
+    padding:7px 14px;border-radius:999px;
+  }
+
+  /* Body */
+  .policy-body{padding:20px 0 100px;}
+  .policy-card{
+    border:1px solid var(--line);border-radius:var(--radius-lg);
+    background:var(--white);box-shadow:var(--shadow-sm);
+    padding:48px;
+  }
+  @media(max-width:640px){.policy-card{padding:32px 22px;}}
+
+  .policy-card section{margin-bottom:40px;}
+  .policy-card section:last-child{margin-bottom:0;}
+  .policy-card h2{
+    font-size:20px;font-weight:700;letter-spacing:-0.01em;margin-bottom:14px;
+    display:flex;align-items:center;gap:10px;
+  }
+  .h2-index{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:26px;height:26px;border-radius:8px;background:var(--fox-tint);
+    color:var(--fox-dark);font-size:12.5px;font-weight:700;flex-shrink:0;
+  }
+  .policy-card p{color:var(--ink-soft);font-size:15px;margin-bottom:12px;}
+  .policy-card p:last-child{margin-bottom:0;}
+  .policy-card ul{margin:12px 0 12px 0;padding-left:0;list-style:none;}
+  .policy-card li{
+    display:flex;gap:10px;align-items:flex-start;
+    font-size:15px;color:var(--ink-soft);margin-bottom:10px;
+  }
+  .policy-card li:last-child{margin-bottom:0;}
+  .li-dot{
+    width:6px;height:6px;border-radius:50%;background:var(--fox);
+    margin-top:8px;flex-shrink:0;
+  }
+  .policy-card strong{color:var(--ink);font-weight:600;}
+  .callout{
+    display:flex;align-items:flex-start;gap:14px;
+    background:var(--fox-tint);border-radius:var(--radius-sm);
+    padding:18px 20px;margin-top:16px;
+  }
+  .callout svg{width:20px;height:20px;color:var(--fox-dark);flex-shrink:0;margin-top:1px;}
+  .callout p{color:var(--ink);font-size:14.5px;font-weight:500;margin:0;}
+  hr.policy-divider{border:none;border-top:1px solid var(--line);margin:40px 0;}
+
+  .contact-callout{
+    display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;
+    background:var(--ink);color:var(--white);border-radius:var(--radius-md);
+    padding:26px 30px;margin-top:56px;
+  }
+  .contact-callout p{color:rgba(255,255,255,0.7);font-size:14px;margin:0;}
+  .contact-callout h3{font-size:17px;font-weight:700;margin-bottom:4px;}
+  .contact-callout a.btn-email{
+    background:var(--fox);color:var(--white);padding:11px 22px;border-radius:999px;
+    font-size:14px;font-weight:600;white-space:nowrap;
+  }
+  .contact-callout a.btn-email:hover{background:var(--fox-dark);text-decoration:none;}
+</style>
+</head>
+<body>
+
+<nav class="policy-nav">
+  <div class="wrap">
+    <a href="FoxTally.html" class="brand">
+      <img src="Images/FoxTally.png" alt="icon image for FoxTally" width="50" height="50">
+      FoxTally
+    </a>
+    <a href="FoxTally.html" class="back-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+      Back to Website
+    </a>
+  </div>
+</nav>
+
+<header class="policy-header">
+  <div class="wrap">
+    <span class="eyebrow">Legal</span>
+    <h1>Terms of Use</h1>
+    <p>The plain-language rules for downloading and using FoxTally.</p>
+    <span class="updated-badge">Last updated: July 9, 2026</span>
+  </div>
+</header>
+
+<div class="policy-body">
+  <div class="wrap">
+    <div class="policy-card">
+
+      <section>
+        <h2><span class="h2-index">1</span>Acceptance of Terms</h2>
+        <p>By downloading, installing, or using FoxTally ("the app"), you agree to these Terms of Use. If you don't agree with them, please don't use the app.</p>
+      </section>
+
+      <section>
+        <h2><span class="h2-index">2</span>License to Use</h2>
+        <p>We grant you a personal, non-exclusive, non-transferable, revocable license to use FoxTally on any Apple device you own or control, in accordance with Apple's Standard End User License Agreement (EULA) and these Terms. This license is for personal use only.</p>
+      </section>
+
+      <section>
+        <h2><span class="h2-index">3</span>What You Can't Do</h2>
+        <p>You agree not to:</p>
+        <ul>
+          <li><span class="li-dot"></span><span>Reverse engineer, decompile, or disassemble the app, except where applicable law expressly permits it.</span></li>
+          <li><span class="li-dot"></span><span>Copy, modify, distribute, sell, or lease any part of the app or its underlying code.</span></li>
+          <li><span class="li-dot"></span><span>Use the app for any unlawful purpose or in a way that violates any applicable local, state, national, or international law.</span></li>
+          <li><span class="li-dot"></span><span>Attempt to circumvent any technical limitations built into the app.</span></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2><span class="h2-index">4</span>Your Content</h2>
+        <p>FoxTally doesn't ask you to submit any personal content — no photos, text, or account information. The counts and settings you create within the app stay stored locally on your device and belong entirely to you.</p>
+        <div class="callout">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+          <p>See our <a href="privacy-policy.html">Privacy Policy</a> for full detail on what data (if any) the app touches.</p>
+        </div>
+      </section>
+
+      <section>
+        <h2><span class="h2-index">5</span>Intellectual Property</h2>
+        <p>FoxTally, including its name, logo, design, and underlying code, is owned by us and protected by copyright and trademark law. Nothing in these Terms transfers any ownership of the app to you — you're licensed to use it, not to own any part of it.</p>
+      </section>
+
+      <section>
+        <h2><span class="h2-index">6</span>No Warranty</h2>
+        <p>FoxTally is provided <strong>"as is"</strong> and <strong>"as available,"</strong> without warranties of any kind, whether express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, or non-infringement. We don't guarantee the app will be error-free, uninterrupted, or perfectly accurate for every counting scenario.</p>
+      </section>
+
+      <section>
+        <h2><span class="h2-index">7</span>Limitation of Liability</h2>
+        <p>To the fullest extent permitted by law, we are not liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of data, arising from your use of, or inability to use, FoxTally — including any reliance on the app's counts for business, inventory, or other purposes.</p>
+      </section>
+
+      <section>
+        <h2><span class="h2-index">8</span>Termination</h2>
+        <p>This license is effective until terminated. It will terminate automatically, without notice, if you fail to comply with any of these Terms. Upon termination, you must stop using the app and delete it from your devices.</p>
+      </section>
+
+      <section>
+        <h2><span class="h2-index">9</span>Changes to These Terms</h2>
+        <p>We may update these Terms occasionally to reflect changes to the app or for legal reasons. If we make material changes, we'll update the "Last updated" date above. Continued use of the app after changes take effect means you accept the revised Terms.</p>
+      </section>
+
+      <section>
+        <h2><span class="h2-index">10</span>Governing Law</h2>
+        <p>These Terms are governed by the laws of your jurisdiction of residence, without regard to conflict-of-law principles, except where superseded by Apple's own Licensed Application End User License Agreement where applicable.</p>
+      </section>
+
+      <hr class="policy-divider">
+
+      <div class="contact-callout">
+        <div>
+          <h3>Questions about these terms?</h3>
+          <p>Reach out directly and we'll get back to you.</p>
+        </div>
+        <a href="mailto:cameron22401@icloud.com" class="btn-email">Email Us</a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

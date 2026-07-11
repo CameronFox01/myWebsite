@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IronFox — How To Guide</title>
+<style>
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --blue-dark:   #0f2a6e;
+  --blue-mid:    #1a4abf;
+  --blue-light:  #4a7cff;
+  --accent:      #ff6b35;
+  --white:       #ffffff;
+  --white-70:    rgba(255,255,255,.70);
+  --white-15:    rgba(255,255,255,.15);
+  --white-08:    rgba(255,255,255,.08);
+  --card-border: rgba(255,255,255,.12);
+  --max-w:       760px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: linear-gradient(180deg, #154dbc, #0c82e9, #618be5);
+  color: var(--white);
+  min-height: 100vh;
+}
+
+/* ── NAV ── */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #154dbc;
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--card-border);
+  padding: 0 5%;
+}
+.nav-inner {
+  max-width: var(--max-w);
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+}
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--white);
+}
+.nav-logo img {
+  width: 34px; height: 34px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+.nav-back {
+  font-size: 14px;
+  color: var(--white-70);
+  text-decoration: none;
+  transition: color .2s;
+}
+.nav-back:hover { color: var(--white); }
+
+/* ── PAGE WRAPPER ── */
+.page {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 24px 100px;
+}
+
+/* ── HERO ── */
+.hero {
+  padding: 64px 0 48px;
+  text-align: center;
+}
+.hero-eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+.hero h1 {
+  font-size: clamp(32px, 6vw, 52px);
+  font-weight: 800;
+  line-height: 1.12;
+  margin-bottom: 16px;
+  letter-spacing: -.02em;
+}
+.hero p {
+  font-size: 18px;
+  color: var(--white-70);
+  line-height: 1.65;
+  max-width: 540px;
+  margin: 0 auto 32px;
+}
+
+/* ── TABLE OF CONTENTS ── */
+.toc {
+  background: var(--white-08);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 28px 32px;
+  margin-bottom: 56px;
+}
+.toc h2 {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--white-70);
+  margin-bottom: 16px;
+}
+.toc ol {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 32px;
+  padding-left: 0;
+  list-style: none;
+  counter-reset: toc;
+}
+.toc li {
+  counter-increment: toc;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 15px;
+}
+.toc li::before {
+  content: counter(toc, decimal-leading-zero);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+.toc a {
+  color: var(--white);
+  text-decoration: none;
+  transition: color .2s;
+}
+.toc a:hover { color: var(--blue-light); }
+
+/* ── CHAPTER ── */
+.chapter {
+  margin-bottom: 56px;
+  scroll-margin-top: 80px;
+}
+.chapter-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+.chapter-num {
+  width: 40px; height: 40px;
+  border-radius: 12px;
+  background: var(--accent);
+  color: white;
+  font-size: 15px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.chapter h2 {
+  font-size: clamp(20px, 3vw, 26px);
+  font-weight: 700;
+  letter-spacing: -.01em;
+}
+
+/* ── STEPS ── */
+.steps { display: flex; flex-direction: column; gap: 16px; }
+
+.step {
+  background: var(--white-08);
+  border: 1px solid var(--card-border);
+  border-radius: 18px;
+  padding: 22px 24px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  transition: background .2s;
+}
+.step:hover { background: var(--white-15); }
+
+.step-icon {
+  width: 38px; height: 38px;
+  border-radius: 10px;
+  background: var(--white-15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+.step-body { flex: 1; }
+.step-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+.step-desc {
+  font-size: 14px;
+  color: var(--white-70);
+  line-height: 1.6;
+}
+
+/* ── TIP BOX ── */
+.tip {
+  background: rgba(255,107,53,.10);
+  border: 1px solid rgba(255,107,53,.30);
+  border-left: 3px solid var(--accent);
+  border-radius: 14px;
+  padding: 16px 20px;
+  font-size: 14px;
+  color: var(--white-70);
+  line-height: 1.6;
+  margin-top: 16px;
+}
+.tip strong { color: var(--accent); }
+
+/* ── DIVIDER ── */
+.divider {
+  border: none;
+  border-top: 1px solid var(--card-border);
+  margin: 48px 0;
+}
+
+/* ── FOOTER ── */
+footer {
+  text-align: center;
+  padding: 40px 24px;
+  font-size: 13px;
+  color: var(--white-70);
+  border-top: 1px solid var(--card-border);
+  line-height: 1.8;
+}
+footer a { color: var(--white-70); }
+footer a:hover { color: var(--white); }
+
+/* ── MOBILE ── */
+@media (max-width: 600px) {
+  .toc ol { grid-template-columns: 1fr; }
+  .page { padding: 0 16px 80px; }
+  .hero { padding: 44px 0 32px; }
+  .step { padding: 18px; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="IronFox.html" class="nav-logo">
+      <img src="Images/LightModeIronFox.png" alt="IronFox Logo">
+      IronFox
+    </a>
+    <a href="IronFox.html" class="nav-back">← Back to IronFox</a>
+  </div>
+</nav>
+
+<div class="page">
+
+  <!-- HERO -->
+  <div class="hero">
+    <span class="hero-eyebrow">How-To Guide</span>
+    <h1>Get the most out of IronFox</h1>
+    <p>Everything you need to know, step by step. Pick a topic or read through from the top.</p>
+  </div>
+
+  <!-- TABLE OF CONTENTS -->
+  <div class="toc">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#setup">Setting Up Your Profile</a></li>
+      <li><a href="#logging">Logging a Workout</a></li>
+      <li><a href="#schedule">Planning Your Week</a></li>
+      <li><a href="#goals">Setting Goals</a></li>
+      <li><a href="#weight">Tracking Your Weight</a></li>
+      <li><a href="#photos">Progress Photos</a></li>
+      <li><a href="#timer">Using the Timer</a></li>
+      <li><a href="#settings">Customizing Settings</a></li>
+    </ol>
+  </div>
+
+  <!-- CHAPTER 1 -->
+  <div class="chapter" id="setup">
+    <div class="chapter-header">
+      <div class="chapter-num">01</div>
+      <h2>Setting Up Your Profile</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-icon">👤</div>
+        <div class="step-body">
+          <div class="step-title">Enter your name and body stats</div>
+          <div class="step-desc">On first launch, IronFox walks you through a quick setup screen. Enter your name, height, weight, and choose your unit system — imperial or metric.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-icon">🎯</div>
+        <div class="step-body">
+          <div class="step-title">Set your weekly workout goal</div>
+          <div class="step-desc">Pick how many days per week you want to work out. IronFox uses this to track your streak and send challenge reminders.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-icon">🔔</div>
+        <div class="step-body">
+          <div class="step-title">Enable notifications</div>
+          <div class="step-desc">Tap "Enable Notifications" to allow IronFox to send you daily weigh-in reminders, schedule reminders, and milestone alerts.</div>
+        </div>
+      </div>
+    </div>
+    <div class="tip"><strong>Tip:</strong> You can update these settings later under Profile → Settings → Units or Notifications.</div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- CHAPTER 2 -->
+  <div class="chapter" id="logging">
+    <!--Method 1-->
+    <div class="chapter-header">
+      <div class="chapter-num">02.1</div>
+      <h2>Logging a Workout</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-icon">➕</div>
+        <div class="step-body">
+          <div class="step-title">Open the Import tab</div>
+          <div class="step-desc">Tap the Import tab at the bottom of the screen. You'll see a list of workout categories — Push, Pull, Legs, Cardio, and more.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-icon">🏋️</div>
+        <div class="step-body">
+          <div class="step-title">Pick a category and exercise</div>
+          <div class="step-desc">Tap a category, then use the picker to select the specific exercise. IronFox will pre-fill your last saved values so you can log faster.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-icon">💾</div>
+        <div class="step-body">
+          <div class="step-title">Enter your stats and save</div>
+          <div class="step-desc">Fill in weight, reps, sets (or time/distance for cardio), add an optional note, then tap Save. The entry is added to your history instantly.</div>
+        </div>
+      </div>
+    </div>
+    <!--Method 2-->
+    <div class="chapter-header">
+      <div class="chapter-num">02.2</div>
+      <h2>Entering a Workout for a Previous Day </h2>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-icon">📆</div>
+        <div class="step-body">
+          <div class="step-title">Open the Calendar Card</div>
+          <div class="step-desc">From the Home tab select the Calendar card. You will see a full view of the Calendar. </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-icon">➕</div>
+        <div class="step-body">
+          <div class="step-title">Select the Add Workout Button when you have selected the curect Date</div>
+          <div class="step-desc">Tap the Add Workout button located in the detail view of the selected date. Directly under the Calendar.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-icon">💾</div>
+        <div class="step-body">
+          <div class="step-title">Enter your workout and save</div>
+          <div class="step-desc">Fill in weight, reps, sets (or time/distance for cardio), add an optional note, then tap Save. The entry is added to your history instantly.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Method 3-->
+     <div class="chapter-header">
+      <div class=""chapter-num">02.3</div>
+      <h2>Entering a Workout through a Schedule</h2>
+     </div>
+     <!--Method 3.1-->
+     <div class="chapter-header">
+      <div class=""chapter-num">02.3.1</div>
+      <h3>Scheduled Workouts through the Calendar</h3>
+     </div>
+     <div class="steps">
+      <div class="step">
+        <div class="step-icon">📆</div>
+        <div class="step-body">
+          <div class="step-title">Open the Calendar Card</div>
+          <div class="step-desc">From the Home tab select the Calendar card. You will see a full view of the Calendar. </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-icon">➕</div>
+        <div class="step-body">
+          <div class="step-title">Select the Workout to enter.</div>
+          <div class="step-desc">Underneath the Days Details which is located just below the Calendar there will be your workouts scheduled for that day. </div>
+          <div class="tip"><strong>Tip</strong>Check out Section 03 Planning Your Week to learn how to set up a schedule.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-icon">💾</div>
+        <div class="step-body">
+          <div class="step-title">Enter your workout and save</div>
+          <div class="step-desc">Fill in weight, reps, sets (or time/distance for cardio), add an optional note, then tap Save. The entry is added to your history instantly.</div>
+        </div>
+      </div>
+      <div class="chapter-header">
+      <div class=""chapter-num">02.3.2</div>
+      <h3>Scheduled Workouts through the Home tab</h3>
+     </div>
+     <div class="steps">
+      <div class = "step">
+        <div class="step-icon">🏠</div>
+        <div class="step-body">
+          <div class="step-title">Scroll to the Today's Plan Card</div>
+          <div class="step-desc">Click on the Home tab view. It will be located near the middle of the options.</div>
+           <div class="tip"><strong>Tip</strong>Check out Section 08 Customizing Settings to make sure the Card is turned on.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-body">
+          <div class="step-icon">➕</div>
+          <div class="step-title">Select the Workout You Wish to Enter</div>
+          <div class="step-desc">Click on the workout in the card.</div>
+           <div class="tip"><strong>Tip</strong>Check out Section 08 Customizing Settings to make sure the Card is turned on.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-icon">💾</div>
+        <div class="step-body">
+          <div class="step-title">Enter your workout and save</div>
+          <div class="step-desc">Fill in weight, reps, sets (or time/distance for cardio), add an optional note, then tap Save. The entry is added to your history instantly.</div>
+        </div>
+      </div>
+     </div>
+     </div>
+    <div class="tip"><strong>Tip:</strong> Tap "Add Custom Workout" inside any category to create your own exercise that isn't in the built-in list.</div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- CHAPTER 3 -->
+  <div class="chapter" id="schedule">
+    <div class="chapter-header">
+      <div class="chapter-num">03</div>
+      <h2>Planning Your Week</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-icon">📅</div>
+        <div class="step-body">
+          <div class="step-title">Open the Schedule</div>
+          <div class="step-desc">From the Home screen, tap the Today's Plan card (if visible) or navigate to the Calendar and tap the calendar+ icon in the top right.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-icon">✏️</div>
+        <div class="step-body">
+          <div class="step-title">Set up each day</div>
+          <div class="step-desc">Select a day of the week, give it a title like "Push Day", then add specific exercises using the category and workout menus.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-icon">⏰</div>
+        <div class="step-body">
+          <div class="step-title">Set a reminder time</div>
+          <div class="step-desc">Toggle the reminder on and pick a time. IronFox will send you a notification at the time you set so you never forget what's on the plan.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-icon">🚀</div>
+        <div class="step-body">
+          <div class="step-title">Log from Today's Plan</div>
+          <div class="step-desc">On the Home screen, Today's Plan shows your exercises for the current day. Tap any exercise to jump straight into logging it — no navigation needed.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- CHAPTER 4 -->
+  <div class="chapter" id="goals">
+    <div class="chapter-header">
+      <div class="chapter-num">04</div>
+      <h2>Setting Goals</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-icon">🏆</div>
+        <div class="step-body">
+          <div class="step-title">Open Goals from your Profile</div>
+          <div class="step-desc">Tap your profile icon in the top right of the Home screen, then tap Goals. Or tap on the Goal tab</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-icon">⚖️</div>
+        <div class="step-body">
+          <div class="step-title">Set a body weight target</div>
+          <div class="step-desc">Enter a target weight and choose whether you're trying to lose or gain. IronFox will track your progress as a percentage and show it on the Weight card.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-icon">💪</div>
+        <div class="step-body">
+          <div class="step-title">Set exercise-specific goals</div>
+          <div class="step-desc">Scroll down to Workout Goals. Pick a category, select an exercise, enter a target weight or distance, and tap Save Goal. IronFox notifies you when you hit it.</div>
+        </div>
+      </div>
+    </div>
+    <div class="tip"><strong>Tip:</strong> Completed goals move to the Achievements section so you always have a record of what you've hit.</div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- CHAPTER 5 -->
+  <div class="chapter" id="weight">
+    <div class="chapter-header">
+      <div class="chapter-num">05</div>
+      <h2>Tracking Your Weight</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-icon">📊</div>
+        <div class="step-body">
+          <div class="step-title">Tap the Weight card</div>
+          <div class="step-desc">From the Home screen, tap the Weight card. This opens a detail view showing your weight history as a chart.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-icon">✍️</div>
+        <div class="step-body">
+          <div class="step-title">Log today's weight</div>
+          <div class="step-desc">Enter your current weight in the input field and tap Save. The chart updates immediately and your Home card reflects the new value.</div>
+        </div>
+      </div>
+    </div>
+    <div class="tip"><strong>Tip:</strong> Enable the Daily Weigh-In reminder under Settings → Notifications so IronFox nudges you each morning before you eat.</div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- CHAPTER 6 -->
+  <div class="chapter" id="photos">
+    <div class="chapter-header">
+      <div class="chapter-num">06</div>
+      <h2>Progress Photos</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-icon">📸</div>
+        <div class="step-body">
+          <div class="step-title">Open the Photos tab</div>
+          <div class="step-desc">Tap the Photos tab. You'll see two slots — Before and After — for side-by-side comparison.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-icon">📷</div>
+        <div class="step-body">
+          <div class="step-title">Take or choose a photo</div>
+          <div class="step-desc">Tap Camera under either slot to take a new photo, or use the Choose Photo buttons below to pick from your library or from photos saved in the app.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-icon">🗂️</div>
+        <div class="step-body">
+          <div class="step-title">Browse your saved photos</div>
+          <div class="step-desc">Tap "Saved Photos" to see all photos stored in IronFox, grouped by month. Tap any photo to use it in a comparison or save it to your iPhone camera roll.</div>
+        </div>
+      </div>
+    </div>
+    <div class="tip"><strong>Tip:</strong> Replacing a photo keeps the old one in your gallery. Tap the ✕ on a slot to clear it — the photo stays saved so you can use it again later.</div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- CHAPTER 7 -->
+  <div class="chapter" id="timer">
+    <div class="chapter-header">
+      <div class="chapter-num">07</div>
+      <h2>Using the Timer</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-icon">⏱️</div>
+        <div class="step-body">
+          <div class="step-title">Choose Stopwatch or Countdown</div>
+          <div class="step-desc">The timer on the Home screen can be set to either a stopwatch or a countdown timer. Switch between them in Settings → Home Screen → Workout Timer.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-icon">▶️</div>
+        <div class="step-body">
+          <div class="step-title">Start, lap, and stop</div>
+          <div class="step-desc">In stopwatch mode, press play to start. While running the play button becomes a lap button — tap it to record a split time. Press stop to pause, or stop again to reset.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-icon">🔢</div>
+        <div class="step-body">
+          <div class="step-title">Set a countdown duration</div>
+          <div class="step-desc">In countdown mode, tap the time display to open the full-screen view. Use the slider to set a time from 30 seconds up to 60 minutes, or use the +/− buttons to fine-tune in 30-second steps.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- CHAPTER 8 -->
+  <div class="chapter" id="settings">
+    <div class="chapter-header">
+      <div class="chapter-num">08</div>
+      <h2>Customizing Settings</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-icon">🎨</div>
+        <div class="step-body">
+          <div class="step-title">Change the background theme</div>
+          <div class="step-desc">Go to Settings → Background to pick a gradient color scheme for the whole app.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-icon">🏠</div>
+        <div class="step-body">
+          <div class="step-title">Show or hide Home cards</div>
+          <div class="step-desc">Under Settings → Home Screen, toggle which cards appear — Weight, Calories, Steps, Calendar, BMI, Measurements, Daily Planner, and more.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-icon">📐</div>
+        <div class="step-body">
+          <div class="step-title">Switch unit systems</div>
+          <div class="step-desc">Go to Settings → Units to switch between Imperial and Metric. IronFox will convert all your saved data automatically after confirmation.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-icon">🔒</div>
+        <div class="step-body">
+          <div class="step-title">Enable Face ID</div>
+          <div class="step-desc">Under Settings → Security, turn on Face ID to require authentication when opening the app. You can also set a grace period so it doesn't lock immediately.</div>
+        </div>
+      </div>
+    </div>
+    <div class="tip"><strong>Tip:</strong> Use Settings → Data to export your workout history as a CSV file for backup or analysis in another tool.</div>
+  </div>
+
+</div><!-- /page -->
+
+<footer>
+  <div style="max-width: 760px; margin: auto;">
+    IronFox &nbsp;·&nbsp; <a href="IronFox.html">Back to main page</a> &nbsp;·&nbsp; <a href="IronFox.html#contact-me">Contact Support</a>
+  </div>
+</footer>
+
+</body>
+</html>
