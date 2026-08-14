@@ -23,16 +23,9 @@ body::before {
 
 .announcement-box {
     max-width: 600px;
-    width: 100%;           /* Ensure it takes up available space */
     line-height: 1.6;
-    overflow-wrap: break-word; /* The magic property for wrapping */
-    word-wrap: break-word;
-    box-sizing: border-box;    /* Prevents padding from breaking the width */
-}
-
-/* If .work-card is a flex container, this is critical */
-.work-card {
-    min-width: 0; 
+    overflow-wrap: break-word; /* Fixes long words */
+    min-width: 0;             /* Prevents content from breaking flex layouts */
 }
 
 .published-app-section{
