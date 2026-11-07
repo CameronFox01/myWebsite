@@ -319,6 +319,15 @@ footer a:hover { color: white; }
     object-fit: cover;
 }
 
+.nav-logo a {
+  color: rgba(255,255,255,.8);
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+  transition: color .2s;
+}
+.nav-logo a:hover { color: white; }
+
 </style>
 </head>
 <body>
@@ -326,8 +335,10 @@ footer a:hover { color: white; }
 <!-- NAV -->
 <nav>
   <div class="nav-logo">
-    <img src="Images/LightModeIronFox.png" alt="IronFox Logo">
-    <span>IronFox</span>
+    <a href="#hero" class="logo-img-link">
+     <img src="Images/LightModeIronFox.png" alt="IronFox Logo">
+    </a>
+    <span><a href="#hero">IronFox</a></span>
   </div>
   <div class="nav-links">
     <a href="#learn">Why IronFox</a>
@@ -341,7 +352,7 @@ footer a:hover { color: white; }
 <div class="container">
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero" id="hero">
   <div class="hero-text">
     <h1>Track the Work.<br>See the Progress.<br>Make It Yours.</h1>
     <p>IronFox is a customizable fitness tracker that helps you log workouts, understand your progress, build consistency, and make the app work the way you train.</p>
